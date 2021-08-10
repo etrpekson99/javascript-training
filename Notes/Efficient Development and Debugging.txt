@@ -1,2 +1,4 @@
 Command + D = select all occurrences of something
 Ctrl + Space = open suggestions
+
+MDN = official documentation of JavaScript
