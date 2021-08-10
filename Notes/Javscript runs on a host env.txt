@@ -1,0 +1,12 @@
+Modern browsers have JavaScript engines built in.
+JavaScript can also run in other environments like on the server-side.
+
+JavaScript was invented to make websites more dynamic.
+JavaScript can manupulate the HTML code, CSS, send background HTTP requests, and much more.
+
+JavaScript CAN'T access the local filesystem, interact with the computer OS, etc.
+
+Google's JavaScript engine (V8) was extracted to run JavaScript anywhere (also known as Node.js)
+Node.js can be executed on any machine and is therefore often used to build a web backend (server-side JavaScript)
+Node.js CAN access the local filesystem, interact with the computer OS
+Node.js CAN'T manipulate HTML or CSS

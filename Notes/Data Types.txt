@@ -1,0 +1,26 @@
+Data Types
+* Numbers
+    - negative numbers and numbers with decimal places (floats)
+* Strings (Text)
+    - important for outputting results, gathering user input, displaying messages, etc
+* Booleans
+    - only either true or false
+* Objects
+    - allows you to group data
+* Arrays
+    - simply a list of data
+
+null / undefined / NaN
+- special values
+- null and undefined are both data types
+* undefined
+    - declared variables where you haven't assigned a value yet are undefined
+    - you should NEVER assign undefined as a value manually
+* null
+    - value for variables where you never assigned a NEW value
+    - never a default value
+    - you CAN assign this is a value if you want to "reset" or "clear" a variable
+* NaN (Not a Number)
+    - NOT a type
+    - kind of a number and can be used in calculations
+    - yields NaN if used in a calculation that is invalid (e.g. 3 / "hi")

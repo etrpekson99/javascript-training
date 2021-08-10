@@ -1,0 +1,30 @@
+Functions are code on demand
+
+Functions can (but don't have to) use parameters and you can (but don't have to) return values
+
+Code in the function is executed only when it is called
+You can call the function as often as you want, passing in different parameter values
+Every function executes differently per call
+
+JS is smart enough to read the entire file before executing it, therefore you can define
+functions below all your code
+
+Function parameters are only available inside of the function body
+
+Functions are all automatically registered before the code is executed
+
+Functions can access any variable declared outside of it
+
+Shadowing
+- This is when we create a new variable with the same name but in a DIFFERENT scope
+- The new variable does not overwrite or remove the globally declared variable, they just co-exist
+
+Any other code written after any return statement will not be executed
+
+"Indirect" vs "Direct" Function execution
+- An "indirect" function execution is when you tell JS that you do not want to execute
+  the function immediately, for example when you add the function to an Event Listener,
+  where the function will only be executed when the event is fired e.g. when a button is
+  clicked
+- Adding a parentheses to a function call (e.g. "add()") will immediately call that function
+  when JS reads it

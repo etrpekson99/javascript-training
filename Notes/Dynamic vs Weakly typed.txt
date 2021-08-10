@@ -1,0 +1,9 @@
+Dynamic and interpreted Programming Language
+- Not pre-compiled, instead parsed and compiled on the fly
+- Code evaluated and executed at runtime
+- Code can chane at runtime (e.g. type of a variable)
+
+Weakly-typed Programming Language
+- Data types are assumed automatically
+- You don't define that some variable has to hold a certain value
+- Data types are not set in stone but can change

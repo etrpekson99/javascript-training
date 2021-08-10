@@ -1,0 +1,25 @@
+Operators
+- syntax feature in JS that allows us to manipulate values
+- Exponentation (e.g. 2 ** 3 = 8)
+- JS follows normal mathematical rules such as PEMDAS
+
+variable++
+- this will add 1 to the variable
+- when assigned to a variable, this will return the value before the change so:
+    - if variable = 0, then you use variable++, it will return 0 which is the
+      value BEFORE the change happened
+
+++variable
+- will also add 1 to the variable
+- when assigned to a variable, this will return the value after the change so:
+    - if variable = 0, then you use ++variable, it will return 1 which is the
+      value AFTER the change happened
+
+typeof
+- lets you evaluate the type of a variable at runtime
+- returns a string
+- there is no "array" type, instead typeof [] will return "object" since arrays are just
+  a special type of object in JS, same as null
+- typeof undefined is "undefined"
+- typeof NaN is "number"
+    

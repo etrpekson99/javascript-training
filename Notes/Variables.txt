@@ -1,0 +1,52 @@
+Variables and Constants
+* Variables
+    - a Variable is a data container or data storage
+    - the value can change in a variable
+* Constants
+    - a data container/ storage as well
+    - the value of a constant cannot be changed
+
+You typically want to use constant as often as possiible to be clear about your intentions in your code.
+
+Variable Naming
+- JS is case-sensitive
+* Allowed
+    let userName
+    - best practice: camelCase
+    let ageGroup5
+    - only letters and digits
+    $kindOfSpecial
+    - starting with $ is allowed
+    _internalValue
+    - starting with _ is allowed
+
+* Not allowed
+    let user_name
+    - allowed BUT bad practice
+    let 12Players
+    - must NOT start with digits
+    let user-b
+    - no special characters
+    let let
+    - keywords are not allwed
+
+JS code is executed from top to bottom
+
+Converting Data types
+* To convert strings to numbers we can either use: 
+    - parseInt(variable)
+    - +variable
+- parseInt or parseFloat is just more intentional
+* To convert numbers to strings we can use:
+    - variable.toString()
+
+"+" is the only arithmetic operator that also supports strings since it will
+concatenate strings and numbers by default. But for other operators it will treat
+it as such:
+3 * '3' = 9 (9 is a number, not a string)
+3 - '3' = 0 (0 is a number, not a string)
+3 / '3' = 1 (1 is a number, not a string)
+
+Only 3 + '3' yields '33' because JS, by default, is going to concatenate the string
+and the number
+

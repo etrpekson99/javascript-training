@@ -1,0 +1,48 @@
+What is JavaScript?
+- A dynamic, interpreted, and weakly-typed programming language which is compiled at runtime.
+- It can be executed as part of a webpage in a browser or directly on any machine / host environment
+- Made to make webpages more dynamic
+- Used to be called LiveScript
+
+How do webpages work?
+- User interacts with Client (Browser)
+- At initial visit to the webpage, a request is sent to a server then the server loads that webpage and sends it back to the browser (Response)
+- For example, a user clicks a button to submit a form. This triggers a new request to the server, and the server then again returns a response.
+
+How JavaScript is executed?
+- A JavaScript engine is built in whatever environment it runs.
+- Job of the engine is to parse code and on-the-fly, compile it to machine code, and then execute that machine code.
+- All this happens on a single thread.
+
+JavaScript vs Java
+- Totally independent programming languages with different syntax and principles
+* Java
+    - Not supported directly in the browser
+    - Strictly object-oriented and strongly-typed
+* JavaScript
+    - Flexible, weakly-typed
+    - Was name JavaScript to "sound cool"
+
+Client-side vs Server-side
+- Syntax and core-features are exactly the same
+* Client-side
+    - Origin of JS
+    - Different browser vendors provide their own JS execution engines
+    - Allows interaction with webpage and browser APIs
+* Server-side
+    - Why not use JS outside of the browser? Allows for code and knowledge re-usage
+    - Extracted V8 engine to run JS anywhere
+    - Special non-browser APIs (e.g. to work with file system, incoming HTTP requests, etc.)
+
+Brief history of JS
+- (1995) Netscape intoduces LiveScipt, renamed to JavaScript
+- (1996) Microsoft releases its own version for IE
+- (Late 1996) JS was submitted to ECMA (European Computer Manufacturers Association) to start standardization
+- (1997 - 2005) Standardization efforts, Microsoft didn't really join and support the standardized JS version though
+- (2006 - 2011) Huge progress in JS ecosystem, Microsoft eventually joined forces
+
+JS and ECMAScript
+- JS is the most famous ECMAScript implementation
+- ECMAScript isn't directly used but browser vendors implement the standard into their engines
+- Each browser comes with its own JS engine that also defines which features are actually supported
+- ECMAScript is under active development. They are continuously shaping the language along with JS

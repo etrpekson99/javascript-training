@@ -1,0 +1,16 @@
+defer attribute added to <script> tags
+- tells the browser that it should download the scripts right away
+  but it should not block parsing HTML, and only execute the scripts
+  after all parsing is finished
+
+async attribute added to <script> tags
+- it tells the browser to start loading the scripts as early as possible,
+  and then the browser is not blocked but it continues parsing HTML, but the
+  difference to defer is that with async, the script executes right away once
+  it is downloaded
+- a script will execute as early as possible, so the order of script execution is
+  not guaranteed
+
+Both defer and async are only available when you have an external script
+It won't work when the JS is embedded in the HTML code
+You also cannot combine inline and external scripts
