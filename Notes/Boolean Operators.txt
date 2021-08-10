@@ -1,0 +1,36 @@
+==
+- Check for value equality
+
+!=
+- Check for value inequality
+
+===
+- Check for value AND type equality
+
+!==
+- Check for value AND type inequality
+
+2 == 2 (true)
+2 == "2" (true)
+2 === 2 (true)
+2 === "2" (false)
+
+=== / !== is usually preferred
+
+< / >
+- Check for value being smaller / greater
+
+<= / >=
+- Check for value being greater or equal / smaller or equal
+
+!
+- Check if NOT true
+
+JS compares strings based on standard lexicographical ordering,
+using Unicode values. That means that "b" is greater than "a".
+
+Capital characters are consider to be SMALLER than lowercase characters.
+
+'ab' > 'aa' (true)
+'a' > 'B' (true)
+'a' > 'b' (false)

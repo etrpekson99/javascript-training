@@ -1,0 +1,92 @@
+const defaultResult = 0;
+let currentResult = defaultResult;
+let logEntries = [];
+
+// Gets input from input field
+function getUserNumberInput() {
+  return parseInt(usrInput.value);
+}
+
+// Generates and writes calculation log
+function createAndWriteOutput(operator, resultBeforeCalc, calcNumber) {
+  const calcDescription = `${resultBeforeCalc} ${operator} ${calcNumber}`;
+  outputResult(currentResult, calcDescription); // from vendor file
+}
+
+function writeToLog(
+  operationIdentifier,
+  prevResult,
+  operationNumber,
+  newResult
+) {
+  const logEntry = {
+    operation: operationIdentifier,
+    prevResult: prevResult,
+    number: operationNumber,
+    result: newResult,
+  };
+  logEntries.push(logEntry);
+  console.log(logEntries);
+}
+
+function calculateResult(operation) {
+  const enteredNumber = getUserNumberInput();
+  if (
+    operation !== 'ADD' &&
+    operation !== 'SUBTRACT' &&
+    operation !== 'MULTIPLY' &&
+    operation !== 'DIVIDE' ||
+    !enteredNumber // truthy or falsy value
+  ) {
+    return;
+  }
+
+  // if (
+  //   operation === 'ADD' ||
+  //   operation === 'SUBTRACT' ||
+  //   operation === 'MULTIPLY' ||
+  //   operation === 'DIVIDE'
+  // ) {
+  //   // execute code here
+  // }
+
+  const initialResult = currentResult;
+  let mathOperator;
+  if (operation === 'ADD') {
+    currentResult += enteredNumber;
+    mathOperator = '+';
+  } else if (operation === 'SUBTRACT') {
+    currentResult -= enteredNumber;
+    mathOperator = '-';
+  } else if (operation === 'MULTIPLY') {
+    currentResult *= enteredNumber;
+    mathOperator = '*';
+  } else if (operation === 'DIVIDE') {
+    currentResult /= enteredNumber;
+    mathOperator = '/';
+  }
+
+  createAndWriteOutput(mathOperator, initialResult, enteredNumber);
+  writeToLog(operation, initialResult, enteredNumber, currentResult);
+}
+
+function add() {
+  calculateResult('ADD');
+}
+
+function subtract() {
+  calculateResult('SUBTRACT');
+}
+
+function multiply() {
+  calculateResult('MULTIPLY');
+}
+
+function divide() {
+  calculateResult('DIVIDE');
+}
+
+addBtn.addEventListener('click', add);
+subtractBtn.addEventListener('click', subtract);
+multiplyBtn.addEventListener('click', multiply);
+divideBtn.addEventListener('click', divide);

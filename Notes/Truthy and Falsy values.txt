@@ -1,0 +1,31 @@
+How JS under the hood evaluates the conditions
+
+example:
+1.
+const name = 'Max';
+if (name === 'Max') {...}
+
+2.
+const name = 'Max';
+if (name) {...}
+
+2 will still work
+JS tries to coerce values to a boolean value if a boolean value is required,
+just as it is in IF statements.
+
+0 is treated as false
+ANY other number (even negative numbers) is treated as true
+
+"" (empty string) is treated as false
+ANY other non-empty string (incl. "false") is treated as true
+
+{}, [], and all other objects and arrays are treated as true
+
+null, undefined, and NaN are treated as false
+
+Coercion vs Conversion
+- JS tries to coerce (convert without really converting) the values
+  you pass to (or other places where conditions are required) to boolean
+  values
+- JS tries to interpret 'Max' as a boolean, but JS will NOT convert the value
+  or it's type to boolean

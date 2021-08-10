@@ -1,0 +1,9 @@
+Operator precedence
+- determines the way in which operators are parsed with respect
+  to each other
+- normal math applies to mathematical operations (PEMDAS)
+
+Reference:
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Operator_Precedence
+
+&& (AND) has a higher precedence than || (OR)

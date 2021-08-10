@@ -1,0 +1,3 @@
+Objects and arrays are "special" in JS.
+Two objects or arrays stored in different variables will NEVER be the same.
+This has something to do with how they are stored.

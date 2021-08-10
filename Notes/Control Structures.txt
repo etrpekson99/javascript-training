@@ -1,0 +1,4 @@
+Control structures
+- you don't always want to execute the same code from top to bottom
+- or you may want to run the same code but you don't want to write them over and over
+
