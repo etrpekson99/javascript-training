@@ -1,0 +1,16 @@
+"Boolean tricks" with Logical operators
+* Boolean coercion via double NOT (double bang operator) -> !!
+    - Converts a "truthy" or "falsy" value to an actual boolean (true/false)
+    - !!"" (false)
+    - !!1 (true)
+
+* Default value assignment via OR operator
+    - OR will return the first truthy value without converting it to a real boolean
+    - const name = someInput || 'Max';
+    - If someInput is false or falsy, 'Max' will be assigned to name
+
+* Use value if condition is true via AND operator
+    - If all conditions are true or truthy, the expression will return the last truthy value
+    - Otherwise it will return the first falsy value
+    - const name = isLoggedIn && 'Max';
+    - 'Max' will be assigned to name if isLoggedIn is truthy
