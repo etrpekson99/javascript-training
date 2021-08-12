@@ -1,0 +1,12 @@
+Some errors can't be avoided (beyond your control as a developer)
+examples:
+- User input errors
+- Network errors
+- etc...
+
+Best you can do is throw and catch errors to fail gracefully or recover if possible
+
+Can be done with:
+try {...} catch(error) {...}
+
+Wrapping your whole code in a try block is not good for performance
