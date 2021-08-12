@@ -1,0 +1,34 @@
+JS Engines and what they do
+
+Whenever the browser hits a script, whether it's imported in HTML
+or written inline, it will execute it.
+
+What the browser does to the code differs based on the
+browser and the JS engine.
+
+"executing the code"
+What does this mean?
+- browser parses (reads and loads) the code
+
+JS Parsing & execution consist of two parts:
+- interpreter
+- compiler (just in time compiler)
+
+Interpreter loads our script, reads it, and then translates it to byte code
+The interpreter starts execution, but it does so line by line, in
+an unoptimized way
+
+To have the best possible performance, we don't just want to interpret the
+code and execute it, but instead we want to compile it to machine code
+and hand it off to your machine, executing it faster.
+
+Interpreters also hand off the byte code to the compiler
+
+"Just in time" compilation: the compiler starts compiling + executing
+the compiled code whilst the code is being read/executed
+
+Once the machine code is done being compiled, it is then handed over
+to the computer which then executes it (which is the fastest way possible)
+
+BROWSER APIs
+- communication bridges between JS and (C++) logic built into the browser

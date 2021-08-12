@@ -1,0 +1,12 @@
+Garbage collection
+
+How is the heap memory managed?
+- using the garbage collector
+
+What does the garbage collector do?
+- periodically checks Heap memory for unused objects (objects without references)
+- the garbage collector removes unused objects
+- we cannot trigger garbage collection on our own
+
+Beware of memory leaks
+- unused objects where you still hold references to

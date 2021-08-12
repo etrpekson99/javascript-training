@@ -1,0 +1,48 @@
+Inside the JS Engine
+
+Two important concepts:
+* Heap
+    - long-term memory
+    - all about memory allocation
+    - stores data in your system memory and manages access to it
+    - functions are stored in the heap
+
+* Stack
+    - short-term memory
+    - execution context
+    - keeps control over what function is currently executing
+    - manages your program flow (function flows and communication)
+    - when the script runs, the stack is getting active
+    - the browser "pushes stuff" into our stack
+    - starts with anonymous script execution
+
+For example you have this code below:
+function getName() {
+    return prompt('your name: ', '');
+}
+
+function greet() {
+    const userName = getName();
+    console.log('Hello' + useraName);
+}
+
+greet();
+
+In the STACK, the functions would be look like this
+(anonymous) -> greet() -> getName() -> prompt()
+
+When a function returns or is done executing, it is "popped" off
+the stack, therefore once prompt() is done executing, the stack will
+now "look" like this:
+(anonymous) -> greet() -> getName()
+
+That DOES NOT mean it is removed from the Heap, just it's current execution
+
+Once all functions are done executing, the stack is "emptied"
+
+Another important concept is the EVENT LOOP
+- helps with asynchronous code
+- helps us with event listeners
+- listeners can be imagined as info being passed to the browser
+- the browser "pings" the JS engine whenever it has a new event being fired by the listeners setup by the JS code
+

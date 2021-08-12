@@ -1,0 +1,33 @@
+ES - ECMAScript
+JavaScript is a specific version of ECMAScript
+
+ES5 (and older)
+- Supported in basically all browser, including old IE
+- only had var for creating variables, not let and const
+- Generally same syntax as ES6, but quite some missing features
+
+ES6 (and newer): Modern JS
+- Supported in modern browsers, can (mostly) be transpiled to ES5
+- Most modern browsers update automatically when the JS version is updated
+- Many new features that help us write cleaner, better, and faster code
+- Still under active development, but ES6 was a big step forward
+
+* var
+    - creates a variable
+    - Available ever since
+    - Function and global scope
+
+Block scope
+- let and const are Block Scoped
+- var only knows global scope and function scope
+- let and const care about the "curly braces", which are statements (ifs, loops, etc.)
+- let and const forces us to write cleaner and better code
+- we no longer use var in modern JS
+- Blocks are created by curly braces (except in objects)
+
+Hoisting
+- JS engine goes over your entire script and registers functions and variables
+- variables created by var pulls the initialization to the top of the script
+- for let and const, it does the same but it doesn't intialize any value to it
+
+Modern JS disables certain features that would work without strict mode

@@ -1,0 +1,35 @@
+In JS we have two categories of types / values:
+* Primitive values
+  - strings, numbers, booleans, null, undefined, Symbol
+  - stored in memory (normally on stack), variable stores value itself
+  - copying a variable (= assign to different variable) copies the VALUE
+
+* Reference values
+  - all other objects ("more expensive to create")
+  - JS can dynamically transform a primitive value to an object
+    if we use the dot (.) notation on it, but this is temporarily
+    and does not convert the type of the original value to object
+  - Stored in memory (Heap), variable stores only a POINTER (address) to
+    location in memory
+  - Copying a variable (= assign to different variable) copies the POINTER / REFERENCE
+  - example:
+    let hobbies = ['sports'];
+    let newHobbies = hobbies;
+    console.log(hobbies); // ['sports']
+    console.log(newHobbies); // ['sports']
+    hobbies.push('cooking');
+    console.log(hobbies); // ['sports', 'cooking']
+    console.log(newHobbies); // ['sports', 'cooking']
+  - newHobbies now also included the new element since we copied just the address of the
+    value in memory, not the value itself
+  - if you want to "copy" the values instead of just the address, you can use the spread
+    operator
+  - example:
+    const person = { age: 30 };
+    const anotherPerson = { ...person };
+  - anotherPerson will be a completely new object with a new address pointing to a new
+    object in memory
+  - This is why two similar objects are not "equal" when compared with equality operators,
+    it is because two objects store two different pointers to memory
+  - This is also why we are able to push new data to arrays create using const, because we
+    manipulate the object in memory, but not the address itself

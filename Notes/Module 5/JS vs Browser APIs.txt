@@ -1,0 +1,8 @@
+JS language
+- understands core syntax (let, const, etc) but does NOT
+  know anything about the DOM for example
+
+Browser APIs
+- Not responsible for understanding your code but instead
+  responsible for exposing APIs like the DOM API which you
+  can use from inside your script code
