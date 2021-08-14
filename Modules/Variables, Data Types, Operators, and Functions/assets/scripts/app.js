@@ -55,8 +55,29 @@ function divide() {
     writeToLog('DIVIDE', initialResult, enteredNumber, currentResult);
 }
 
+function calculate(operation) {
+    const enteredNumber = getUserInput();
+    const initialResult = currentResult;
+    let operator;
+    if (operation === 'ADD') {
+        currentResult += enteredNumber;
+        operator = '+';
+    } else if (operation === 'SUBTRACT') {
+        currentResult -= enteredNumber;
+        operator = '-';
+    } else if (operation === 'MULTIPLY') {
+        currentResult *= enteredNumber;
+        operator = '*';
+    } else if (operation === 'DIVIDE') {
+        currentResult /= enteredNumber;
+        operator = '/';
+    }
+    createAndWriteOutput(operator, initialResult, enteredNumber);
+    writeToLog(operation, initialResult, enteredNumber, currentResult);
+}
+
 // when this btn is clicked, have a look at designated function and execute it
-addBtn.addEventListener('click', add);
-subtractBtn.addEventListener('click', subtract);
-multiplyBtn.addEventListener('click', multiply);
-divideBtn.addEventListener('click', divide);
+addBtn.addEventListener('click', calculate.bind(this, 'ADD'));
+subtractBtn.addEventListener('click', calculate.bind(this, 'SUBTRACT'));
+multiplyBtn.addEventListener('click', calculate.bind(this, 'MULTIPLY'));
+divideBtn.addEventListener('click', calculate.bind(this, 'DIVIDE'));
