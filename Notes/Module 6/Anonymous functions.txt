@@ -1,0 +1,8 @@
+Anonymous functions are functions without names.
+
+You can use anonymous functions to add functionality to event listeners,
+and if the function is called there and only there.
+
+Why would you want to name functions?
+- If the function throws an error, it will be hard to find which
+  function the error comes from if the function is anonymous

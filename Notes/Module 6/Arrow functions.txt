@@ -1,0 +1,32 @@
+This is an arrow function:
+() => { ... }
+
+Cannot be defined as an expression.
+
+Always used on the right side of an equal sign or
+in event listeners
+
+Can return values without using the return keyword, only
+if the return statement is the only statement within the
+function body
+
+Instead of:
+const getObject = function() {
+    return { person: 'Max' };
+}
+
+We can write:
+const getObject = () => ({ person: 'Max' });
+
+How to write arrow function:
+- No arguments / parameters
+  () => { ... } // empty pair of parentheses is required
+
+- Exactly one (1) argument / parameter
+  arg => { ... } // parentheses can be omitted
+
+- Exactly one (1) expression in function body
+  (a, b) => a + b // curly braces can be omitted, result is returned
+
+- More than one (1) expression in function body
+  (a, b) => { a *= 2; return a + b; } // curly braces and return statement is required

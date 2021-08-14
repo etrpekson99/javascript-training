@@ -1,0 +1,11 @@
+Parameters
+- variables which you specify between parentheses when defining a function
+- example
+  function sayHi(name) { ... }
+- name is the parameter
+
+Arguments
+- the concrete values you pass to a function when calling that function
+- example
+  sayHi('Max');
+- 'Max' is the argument of the function

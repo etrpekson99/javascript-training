@@ -1,0 +1,18 @@
+Function declaration
+- JS automatically hoists these on top
+- Can be declared anywhere in the file
+- This fully initializes it for us
+- example:
+    function multiply (a, b) {
+        return a * b;
+    }
+
+Function expression
+- Hoisted automatically to the top BUT NOT initialized / defined
+- Cannot be declaed anywhere in the file
+- Expressions produce a value (a function object) which needs to be
+  stored somewhere manually
+- example:
+    function multiply = function(a, b) {
+        return a * b;
+    }

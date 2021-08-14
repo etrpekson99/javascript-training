@@ -1,0 +1,21 @@
+Functions stored in an object are called methods.
+
+An example of a method is the addEventListener function
+
+All methods are functions but not all functions are methods.
+
+example of a method:
+const person = {
+    greet: function greet() {
+        console.log('hello');
+    }
+}
+
+person.greet();
+
+Functions are also objects!
+
+When a function is stored in a variable, the implication is that
+the function is still created, but the function is no longer stored
+in the function name, but in the name of the constant it is
+assigned to.

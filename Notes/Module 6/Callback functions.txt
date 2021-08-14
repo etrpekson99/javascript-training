@@ -1,0 +1,5 @@
+Callback functions are called for us by something else.
+
+For example, when a function is passed to addEventListener.
+
+We do not control when the function is executed
