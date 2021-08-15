@@ -1,0 +1,14 @@
+HTML string
+- innerHTML -> add (render) HTML string
+- insertAdjacentHTML() -> add (render) HTML string in specific position
+
+createElement
+- this allows us to easily access newly-created elements, as opposed to when adding
+  new elements using HTML strings
+- appendChild() / append() -> append new DOM element / node
+- prepend(), before(), after(), insertBefore() -> insert new DOM element / node in specific position
+- replaceChild(), replaceWith() -> replace existing DOM element / node with a new one
+
+If we have an element selected, if, for example, we append it first, and then
+prepend it later on, it will be moved from the place it was appended to to the
+new place it's been prepended to. It is not "copied", it is moved.
