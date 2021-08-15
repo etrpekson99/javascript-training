@@ -1,0 +1,18 @@
+Styling DOM Elements
+
+via style property
+- directly target individual CSS styles on the element
+- controls styles as inline styles on the element
+- has the highest specificity, which means it will overried all other styles
+  assigned to the element
+- based on CSS properties but have adjusted names
+
+via className
+- directly set the CSS classes assigned to the element
+- set and control all classes at once
+- you can also control the id or other properties
+
+via classList
+- conveniently add, remove, or toggle CSS classes
+- fine-grained control over classes that are added
+- can be used with className (but with care)
