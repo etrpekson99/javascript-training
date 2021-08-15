@@ -1,0 +1,22 @@
+Often (but not always), attributes are mapped to properties and
+"live synchronization" is set up.
+
+example:
+<input id="input-1" class="input-default" value="Enter text" />
+
+id="input-1", class="input-default", and value="Enter text" are all considered attributes.
+Everything placed in HTML code, on element tags are considered attributes.
+
+What the browser does with these attributes is it creates such a DOM object based
+on the tag name and pre-configures some of its properties based on these attributes.
+
+The Property is a value stored in the object that's created based on your HTML code.
+
+const input = document.getElementById("input");
+The properties are the ff:
+input.id (1:1 mapping + live-sync)
+input.className (different names but live-sync)
+input.value (1:1 mapping and 1-way live-sync)
+etc..
+
+Not every attribute has a 1-to-1 mapping in properties.

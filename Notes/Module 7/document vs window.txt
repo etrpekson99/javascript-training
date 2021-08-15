@@ -1,0 +1,13 @@
+document
+- Root DOM Node that the browser exposes to us
+- a property of the global window object
+- the top-most entrypoint to access to all the rendered HTML code
+- provides access to element querying, DOM content, etc
+
+window
+- the active browser window / tab
+- gives us access to all the core APIs that the browser exposes to us
+- by default, in JS code, we are given access to every method under window
+- acts as global storage for script, also provides access to window-specific
+  properties and methods
+- will NOT allow you to access other tabs / windows

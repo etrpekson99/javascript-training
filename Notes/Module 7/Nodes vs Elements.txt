@@ -1,0 +1,11 @@
+Nodes
+- objects that make up the DOM
+- everything in the DOM is a node
+- HTML tags are just element nodes
+- we also have text nodes and attribute nodes
+
+Elements
+- just the nodes created off of HTML tags
+- has special properties and method to interact with the elements
+- can be selected in various different ways via JS
+- can be created and removed via JS

@@ -1,0 +1,33 @@
+Summary: Node Query Methods
+document.body -> selects the <body> element node
+document.head -> selects the <head> element node
+document.documentElement -> selects the <html> element node
+
+Query Methods
+
+* document.querySelect(<CSS selector>);
+- takes any CSS selector (e.g. '#some-id', '.some-class', or 'div p.some-class')
+  and returns the FIRST matching element in the DOM.
+- returns null if no matching element could be found
+
+* document.getElementById(<ID>);
+- takes an ID (without #, just the id name) and returns the element that
+  has this id
+- since the same ID shouldn't occur more than once on your page, it'll always
+  return exactly that one.
+- returns null if no element with the specified ID could be found
+
+* document.querySelectorAll(<CSS selector>);
+- takes any CSS selector (e.g. '#some-id', '.some-class', or 'div p.some-class')
+  and returns ALL matching elements in the DOM as a static (non-live) NodeList
+- returns an empty NodeList if no matching element could be found
+
+* document.getElementByClassName(<CSS CLASS>);
+- takes a CSS class (e.g. 'some-class') and returns a live HTMLCollection
+  of matched elements in your DOM
+- returns an empty HTMLCollection if no matching elements were found
+
+* document.getElementsByTagName(<HTML TAG>);
+- takes an HTML tag (e.g. 'p') and returns a live HTMLCollection of matched elements
+  in your DOM
+- returns an empty HTMLCollection if no matching elements were found

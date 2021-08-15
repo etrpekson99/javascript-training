@@ -1,0 +1,16 @@
+querySelector(), getElementById()
+- return single elements
+- different ways of querying elements (by CSS selector, by ID, respectively)
+- direct reference to DOM element is returned because remember that DOM nodes
+  are just JS objects in the end
+
+querySelectorAll(), getElementsByTagName(), etc..
+- return collections of elements (array-like objects): NodeList
+- different ways of querying elements (by CSS selector, b tag name, by CSS class)
+- querySelectorAll() returns a non-live NodeList
+- getXByY methods return live NodeLists
+
+querySelector can let us target individual elements on our screen
+
+When using these queries, it is important that we have already parsed our
+HTML code already.

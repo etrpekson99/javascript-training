@@ -1,0 +1,21 @@
+DOM
+- Document Object Model
+
+Browser
+- When the HTML file is downloaded, the browser parses it and renders it
+- exposes Web API to allow JS to work with the parsed document, this is what's
+  called the "Document Object Model" (DOM)
+
+DOM is not strictly tied to browsers.
+There are other tools that can parse HTML.
+
+The browser parses the HTML code and creates an object representation.
+For example, the <html> tag is translated to an HTML node, which is an element
+node which represents the <html> tag.
+
+The browser also creates a tree of nodes with the HTML node as the main parent node.
+The browser keeps track of parent-child relations you have between different HTML
+elements, and it does so by making a node tree.
+
+All text that we have are also translated into text nodes.
+
