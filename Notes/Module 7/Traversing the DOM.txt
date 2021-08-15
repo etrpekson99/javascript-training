@@ -1,0 +1,39 @@
+<div>
+    <p>
+        A <em>test</em>
+    </p>
+</div>
+
+Child
+- direct child node or element
+- <p> is a child of <div>
+- <em> is not a child of <div>  
+
+Descendant
+- direct or indirect child node or element
+- <p> is a descendant of <div>
+- <em> is also a descendant of <div>
+
+
+Parent
+- Direct parent node or element
+- <div> is a parent of <p>
+- <div> is NOT a parent of <em>
+
+Ancestor
+- Direct or indirect parent or node element
+- <div> is an ancestor of <p> AND of <em>
+
+Traversing the DOM
+
+Current node to parent
+- parentNode, parentElement, closest(), etc
+
+Current node to children
+- childNodes, children, querySelector(), etc
+- firstChild, firstElementChild
+- lastChild, lastElementChild
+
+Sibling nodes
+- previousSibling, previousElementSibling
+- nextSibling, nextElementSibling

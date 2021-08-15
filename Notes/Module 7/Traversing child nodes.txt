@@ -1,0 +1,10 @@
+.children
+- returns ONLY element nodes (html nodes only)
+
+.childNodes
+- returns ALL element nodes (including text nodes)
+
+.closest(<ID>)
+- allows us to pick the closest ancestor element
+
+text nodes cannot have child nodes
