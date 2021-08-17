@@ -1,0 +1,8 @@
+What's an iterable?
+- objects that implement the "iterable" protocol and have an @@iterator method (i.e. Symbol.iterator)
+- objects where you can use the for-of loop
+- not every iterable is an array
+
+What's an array-like object?
+- objects that have a length property and use indexes to access items
+- not every array-like object is an array
