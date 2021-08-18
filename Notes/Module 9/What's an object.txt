@@ -1,0 +1,12 @@
+What are objects?
+- core data structure in JS
+- typically reflect "real-world" entities
+- allow us to apply real-world logic to coding
+- made up of properties and methods
+- store data in properties and actions in methods
+- allow us to group related data and split our code into logical pieces
+- ONLY objects are reference values
+  - { ... } -> object literals
+  - DOM nodes
+  - Arrays
+  - anything that isn't a primitive value
