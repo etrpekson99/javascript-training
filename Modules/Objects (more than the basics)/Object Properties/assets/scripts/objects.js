@@ -6,7 +6,8 @@ const person = {
     hobbies: ['Coding', 'Cooking'],
     greet: function() {
         console.log('hi there');
-    }
+    },
+    1.5: 'Hello', //behind the scenes, this is coerced to a string
 };
 
 // adding, modifying, and deleting properties
@@ -41,3 +42,11 @@ const anotherPerson = {
 console.log(anotherPerson['first-name']); // Elijah
 movieList.style['background-color'] = 'red';
 movieList.style.display = 'block';
+
+// --------------------------------------------------------------------------------------------------------------------------------------------------------
+// property types and property order
+// negative numbers cannot be object keys
+// dot notation will not work for any kind of number
+console.log(person[1.5]);
+// the key-value pairs are ordered based on where they are inserted by us
+// if we have an object that consists only of number keys, they will be sorted as numbers
