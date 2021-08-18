@@ -1,0 +1,12 @@
+Maps vs Objects
+
+Maps
+- can use ANY values (and types) as keys
+- better performance for large quantities of data
+- better performance when adding or removing data frequently
+
+Objects
+- Only may use string, numbers or symbols as keys
+- perfect for small / medium-sized sets of data
+- can have methods that can interact with data in the object, which isn't possible with maps
+- easier / quicker to create (typically also with better performance)

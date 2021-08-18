@@ -1,0 +1,11 @@
+Sets
+- store (nested) data of any kind and length
+- iterable, also some special set methods available
+- order is not guaranteed, duplicates are NOT allowed, no idex-based access
+- we can pass any existing iterable to new Set();
+
+Maps
+- store key-value data of any kind and length, any key values are allowed
+- you may have any data type as a key
+- iterable, also some special map methods available
+- order is guaranteed, duplicate keys are NOT allows, key-based access
