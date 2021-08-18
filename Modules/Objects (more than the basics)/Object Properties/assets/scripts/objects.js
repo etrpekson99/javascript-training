@@ -50,3 +50,20 @@ movieList.style.display = 'block';
 console.log(person[1.5]);
 // the key-value pairs are ordered based on where they are inserted by us
 // if we have an object that consists only of number keys, they will be sorted as numbers
+
+// --------------------------------------------------------------------------------------------------------------------------------------------------------
+// dynamic property access and setting properties dynamically
+const keyName = 'first-name';
+console.log(anotherPerson[keyName]); // Elijah
+
+// dynamically set properties with the square bracket notation
+const userChosenKeyName = 'level';
+const oneMorePerson = {
+    'first-name': 'Elijah',
+    [userChosenKeyName]: '...',
+    age: 23,
+    hobbies: ['Coding', 'Cooking'],
+    greet: function() {
+        console.log('hi there');
+    }
+}
