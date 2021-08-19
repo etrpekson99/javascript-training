@@ -23,7 +23,11 @@ const renderMovies = (filter = '') => {
 
    filteredMovies.forEach((movie) => {
       const movieEl = document.createElement('li');
-      
+
+      if ('info' in movie) { // check if movie has an 'info' property, this is equivalent to movie.info === undefined
+        console.log('info in movie')
+      }
+
       const { info, ...others } = movie;
       console.log(others); // will output an object with only the id key
       
