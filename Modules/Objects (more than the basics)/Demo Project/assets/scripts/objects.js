@@ -45,7 +45,7 @@ const renderMovies = (filter = '') => {
       let text = `${getTitle.call(movie)} - `; // call() immediately executed the function, but allows us to change what "this" refers to as well
       let otherText = `${getTitle.apply(movie, [])} - `; // apply() does the same thing, but it allows us pass additional arguments but as an array
       for (const key in info) {
-         if (key !== 'title') {
+         if (key !== 'title' && key !== '_title') {
             text += `${key}: ${info[key]}`;
          }
       }
@@ -59,14 +59,23 @@ const addMovieHandler = () => {
    const extraName = document.getElementById('extra-name').value;
    const extraValue = document.getElementById('extra-value').value;
 
-   if (title.trim() === '' || extraName.trim() === '' || extraValue === '') {
+   if (extraName.trim() === '' || extraValue === '') {
       return;
    }
 
    // using the shorthand property syntax
    const newMovie = {
       info: {
-         title,
+          set title(value) {
+              if (value.trim() === '') {
+                  this._title = 'default';
+                  return;
+              }
+              this._title = value;
+          },
+         get title() {
+            return this._title;
+         },
          [extraName]: extraValue,
       },
       id: Math.random().toString(), // everything in JS has a toString() method
@@ -80,6 +89,9 @@ const addMovieHandler = () => {
         return this.info.title.toUpperCase();
       }
    };
+
+   newMovie.info.title = title; // setter is triggered when we assign a value to the property
+   console.log(newMovie.info.title); // getter is executed when we try to access the property
 
    movies.push(newMovie);
    renderMovies();
