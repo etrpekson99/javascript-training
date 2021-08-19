@@ -23,10 +23,16 @@ const renderMovies = (filter = '') => {
 
    filteredMovies.forEach((movie) => {
       const movieEl = document.createElement('li');
-      let text = `${movie.info.title} - `;
-      for (const key in movie.info) {
+      
+      const { info, ...others } = movie;
+      console.log(others); // will output an object with only the id key
+      
+      const { title: movieTitle } = info; // assigning a new name to the extracted property
+      
+      let text = `${movieTitle} - `;
+      for (const key in info) {
          if (key !== 'title') {
-            text += `${key}: ${movie.info[key]}`;
+            text += `${key}: ${info[key]}`;
          }
       }
       movieEl.textContent = text;
