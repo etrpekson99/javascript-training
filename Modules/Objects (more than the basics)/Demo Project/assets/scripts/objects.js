@@ -24,21 +24,22 @@ const renderMovies = (filter = '') => {
    filteredMovies.forEach((movie) => {
       const movieEl = document.createElement('li');
 
-      if ('info' in movie) { // check if movie has an 'info' property, this is equivalent to movie.info === undefined
-        console.log('info in movie')
+      if ('info' in movie) {
+         // check if movie has an 'info' property, this is equivalent to movie.info === undefined
+         console.log('info in movie');
       }
 
       const { info, ...others } = movie;
       console.log(others); // will output an object with only the id key
-      
+
       const { title: movieTitle } = info; // assigning a new name to the extracted property
       const { getFormattedTitle } = movie; // "this" here refers to the global execution object, unless we use bind
-      
+
       let { getTitle } = movie;
       // we pass the first argument as what we want "this" to refer to
       // inside of the getTitle function
-    //   getTitle = getTitle.bind(movie); // when getTitle executes, "this" should refer to the movie object
-      
+      //   getTitle = getTitle.bind(movie); // when getTitle executes, "this" should refer to the movie object
+
       // the easiest way to remember what "this" is is whichever comes
       // before the dot notation calling the function
       // in this case, it's movie
@@ -66,28 +67,30 @@ const addMovieHandler = () => {
    // using the shorthand property syntax
    const newMovie = {
       info: {
-          set title(value) {
-              if (value.trim() === '') {
-                  this._title = 'default';
-                  return;
-              }
-              this._title = value;
-          },
+         set title(value) {
+            // if we do not add a setter, the value is read-only
+            if (value.trim() === '') {
+               this._title = 'default';
+               return;
+            }
+            this._title = value;
+         },
          get title() {
+            // if we do not add a getter, the value is write-only
             return this._title;
          },
          [extraName]: extraValue,
       },
       id: Math.random().toString(), // everything in JS has a toString() method
-      getFormattedTitle: function() {
-          // this will always refer to whatever CALLED the function, or whatever is responsible for executing the function
-          // "look at the thing which is responsible for executing the function, in this case it's newMovie"
-          return this.info.title.toUpperCase();
+      getFormattedTitle: function () {
+         // this will always refer to whatever CALLED the function, or whatever is responsible for executing the function
+         // "look at the thing which is responsible for executing the function, in this case it's newMovie"
+         return this.info.title.toUpperCase();
       },
       // another way of defining a method / adding a method to an object:
       getTitle() {
-        return this.info.title.toUpperCase();
-      }
+         return this.info.title.toUpperCase();
+      },
    };
 
    newMovie.info.title = title; // setter is triggered when we assign a value to the property
@@ -97,19 +100,19 @@ const addMovieHandler = () => {
    renderMovies();
 };
 
-const searchMovieHandler = function() {
-    console.log(this); // "this" will refer to the button IF we DO NOT use an arrow function
+const searchMovieHandler = function () {
+   console.log(this); // "this" will refer to the button IF we DO NOT use an arrow function
    const filterTerm = document.getElementById('filter-title').value;
    renderMovies(filterTerm);
 };
 
 const searchMovieHandler2 = () => {
-    // "this" will refer to the Window because ARROW FUNCTIONS do not automatically bind "this" to anything
-    // "this" will refer to the same thing outside of the function
-    console.log(this); 
+   // "this" will refer to the Window because ARROW FUNCTIONS do not automatically bind "this" to anything
+   // "this" will refer to the same thing outside of the function
+   console.log(this);
    const filterTerm = document.getElementById('filter-title').value;
    renderMovies(filterTerm);
-}
+};
 
 addMovieBtn.addEventListener('click', addMovieHandler);
 searchBtn.addEventListener('click', searchMovieHandler);
@@ -141,17 +144,17 @@ const newPerson2 = Object.assign({}, newPerson);
 // ----------------------------------------------------------------------------------------------------------------
 // how arrow functions can be useful with regard to "this"
 const members = {
-    teamName: 'spurs',
-    people: ['Max', 'Manuel'],
-    getTeamMembers() {
-        this.people.forEach(p => {
-            // If we used function(), "this" will be bound to the Window object, because we
-            // defined this new function in forEach, which is triggered by the Window.
-            // That wouldn't be the case here since we used an arrow function. Therefore,
-            // "this" keeps its binding from outside the function, in this case
-            // outside the function would be the members object
-            console.log(p + ' ' + this.teamName); 
-        })
-    }
-}
+   teamName: 'spurs',
+   people: ['Max', 'Manuel'],
+   getTeamMembers() {
+      this.people.forEach((p) => {
+         // If we used function(), "this" will be bound to the Window object, because we
+         // defined this new function in forEach, which is triggered by the Window.
+         // That wouldn't be the case here since we used an arrow function. Therefore,
+         // "this" keeps its binding from outside the function, in this case
+         // outside the function would be the members object
+         console.log(p + ' ' + this.teamName);
+      });
+   },
+};
 members.getTeamMembers();
