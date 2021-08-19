@@ -91,6 +91,14 @@ const searchMovieHandler = function() {
    renderMovies(filterTerm);
 };
 
+const searchMovieHandler2 = () => {
+    // "this" will refer to the Window because ARROW FUNCTIONS do not automatically bind "this" to anything
+    // "this" will refer to the same thing outside of the function
+    console.log(this); 
+   const filterTerm = document.getElementById('filter-title').value;
+   renderMovies(filterTerm);
+}
+
 addMovieBtn.addEventListener('click', addMovieHandler);
 searchBtn.addEventListener('click', searchMovieHandler);
 
@@ -117,3 +125,21 @@ const newPerson2 = Object.assign({}, newPerson);
 // the difference is:
 // for call(), we can pass a list as additional arguments for the function
 // for apply(), we must pass an array and only an array as the additional argument to the function
+
+// ----------------------------------------------------------------------------------------------------------------
+// how arrow functions can be useful with regard to "this"
+const members = {
+    teamName: 'spurs',
+    people: ['Max', 'Manuel'],
+    getTeamMembers() {
+        this.people.forEach(p => {
+            // If we used function(), "this" will be bound to the Window object, because we
+            // defined this new function in forEach, which is triggered by the Window.
+            // That wouldn't be the case here since we used an arrow function. Therefore,
+            // "this" keeps its binding from outside the function, in this case
+            // outside the function would be the members object
+            console.log(p + ' ' + this.teamName); 
+        })
+    }
+}
+members.getTeamMembers();

@@ -14,3 +14,8 @@ if we try to extract getTitle() like this:
 const { getTitle } = newMovie;
 "this" will be the global execution context, in this case it 
 is the global execution object
+
+The difference between using "this" in arrow functions
+and in normal function() declarations
+- Arrow functions will keep whatever is bound to "this" outside of the function,
+  normal function() declarations will be bind "this" to whatever calls the function
