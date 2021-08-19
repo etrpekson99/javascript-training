@@ -37,12 +37,13 @@ const renderMovies = (filter = '') => {
       let { getTitle } = movie;
       // we pass the first argument as what we want "this" to refer to
       // inside of the getTitle function
-      getTitle = getTitle.bind(movie); // when getTitle executes, "this" should refer to the movie object
+    //   getTitle = getTitle.bind(movie); // when getTitle executes, "this" should refer to the movie object
       
       // the easiest way to remember what "this" is is whichever comes
       // before the dot notation calling the function
       // in this case, it's movie
-      let text = `${movie.getFormattedTitle()} - `;
+      let text = `${getTitle.call(movie)} - `; // call() immediately executed the function, but allows us to change what "this" refers to as well
+      let otherText = `${getTitle.apply(movie, [])} - `; // apply() does the same thing, but it allows us pass additional arguments but as an array
       for (const key in info) {
          if (key !== 'title') {
             text += `${key}: ${info[key]}`;
@@ -108,3 +109,10 @@ const newPerson = { name: 'Elai' };
 // arguments we passed into it.
 // We can also pass in existing objects.
 const newPerson2 = Object.assign({}, newPerson);
+
+// ----------------------------------------------------------------------------------------------------------------
+// difference between call() and apply()
+// call() and apply() immediately execute the function, whilst letting us specify what "this" is in the function
+// the difference is:
+// for call(), we can pass a list as additional arguments for the function
+// for apply(), we must pass an array and only an array as the additional argument to the function
