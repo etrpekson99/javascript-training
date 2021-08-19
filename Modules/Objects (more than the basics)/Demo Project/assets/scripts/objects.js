@@ -49,7 +49,7 @@ const addMovieHandler = () => {
          title,
          [extraName]: extraValue,
       },
-      id: Math.random(),
+      id: Math.random().toString(), // everything in JS has a toString() method
    };
 
    movies.push(newMovie);
@@ -63,3 +63,12 @@ const searchMovieHandler = () => {
 
 addMovieBtn.addEventListener('click', addMovieHandler);
 searchBtn.addEventListener('click', searchMovieHandler);
+
+// ----------------------------------------------------------------------------------------------------------------
+// the spread operator on objects
+const person = { name: 'Elijah', hobbies: ['Coding'] };
+const anotherPerson = { ...person };
+anotherPerson.age = 30;
+console.log(person.age); // this will be undefined
+
+const person3 = { ...anotherPerson, age: 20 }; // override age
