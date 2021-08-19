@@ -72,3 +72,11 @@ anotherPerson.age = 30;
 console.log(person.age); // this will be undefined
 
 const person3 = { ...anotherPerson, age: 20 }; // override age
+
+// ----------------------------------------------------------------------------------------------------------------
+// understanding Object.assign()
+const newPerson = { name: 'Elai' };
+// Object.assign will return the new object where it has merged all the
+// arguments we passed into it.
+// We can also pass in existing objects.
+const newPerson2 = Object.assign({}, newPerson);
