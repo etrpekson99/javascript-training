@@ -1,0 +1,16 @@
+"this" will always refer to whatever executes the function.
+
+const newMovie = {
+      getTitle() {
+        return this.info.title;
+      }
+   };
+
+if we call getTitle() like this:
+newMovie.getTitle()
+"this" will then refer to newMovie
+
+if we try to extract getTitle() like this:
+const { getTitle } = newMovie;
+"this" will be the global execution context, in this case it 
+is the global execution object

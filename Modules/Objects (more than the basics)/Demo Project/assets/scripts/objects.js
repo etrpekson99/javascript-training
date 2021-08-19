@@ -32,10 +32,16 @@ const renderMovies = (filter = '') => {
       console.log(others); // will output an object with only the id key
       
       const { title: movieTitle } = info; // assigning a new name to the extracted property
-    //   const { getFormattedTitle } = movie;
+      const { getFormattedTitle } = movie; // "this" here refers to the global execution object, unless we use bind
+      
+      let { getTitle } = movie;
+      // we pass the first argument as what we want "this" to refer to
+      // inside of the getTitle function
+      getTitle = getTitle.bind(movie); // when getTitle executes, "this" should refer to the movie object
       
       // the easiest way to remember what "this" is is whichever comes
       // before the dot notation calling the function
+      // in this case, it's movie
       let text = `${movie.getFormattedTitle()} - `;
       for (const key in info) {
          if (key !== 'title') {
@@ -67,6 +73,10 @@ const addMovieHandler = () => {
           // this will always refer to whatever CALLED the function, or whatever is responsible for executing the function
           // "look at the thing which is responsible for executing the function, in this case it's newMovie"
           return this.info.title.toUpperCase();
+      },
+      // another way of defining a method / adding a method to an object:
+      getTitle() {
+        return this.info.title.toUpperCase();
       }
    };
 
