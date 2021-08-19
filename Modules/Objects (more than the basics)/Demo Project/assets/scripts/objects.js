@@ -85,7 +85,8 @@ const addMovieHandler = () => {
    renderMovies();
 };
 
-const searchMovieHandler = () => {
+const searchMovieHandler = function() {
+    console.log(this); // "this" will refer to the button IF we DO NOT use an arrow function
    const filterTerm = document.getElementById('filter-title').value;
    renderMovies(filterTerm);
 };
