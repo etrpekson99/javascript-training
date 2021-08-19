@@ -32,8 +32,11 @@ const renderMovies = (filter = '') => {
       console.log(others); // will output an object with only the id key
       
       const { title: movieTitle } = info; // assigning a new name to the extracted property
+    //   const { getFormattedTitle } = movie;
       
-      let text = `${movieTitle} - `;
+      // the easiest way to remember what "this" is is whichever comes
+      // before the dot notation calling the function
+      let text = `${movie.getFormattedTitle()} - `;
       for (const key in info) {
          if (key !== 'title') {
             text += `${key}: ${info[key]}`;
@@ -60,6 +63,11 @@ const addMovieHandler = () => {
          [extraName]: extraValue,
       },
       id: Math.random().toString(), // everything in JS has a toString() method
+      getFormattedTitle: function() {
+          // this will always refer to whatever CALLED the function, or whatever is responsible for executing the function
+          // "look at the thing which is responsible for executing the function, in this case it's newMovie"
+          return this.info.title.toUpperCase();
+      }
    };
 
    movies.push(newMovie);
