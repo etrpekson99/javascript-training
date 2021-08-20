@@ -1,0 +1,3 @@
+What is Object-oriented programming?
+- way of writing and structuring our code
+- work with real-life entities in our code
