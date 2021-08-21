@@ -195,3 +195,8 @@ console.log(isInstanceOfPerson); // true
 const btn = document.querySelector('button');
 const isHTMLButtonElement = btn instanceof HTMLButtonElement;
 console.log(isHTMLButtonElement);  // true
+
+// ----------------------------------------------------------------------------------------------------------------------------------
+// built-in classes
+const obj = new Object(); // obj is an instance of the Object class
+const arr = new Array(); // arr is an instance of Array
