@@ -1,0 +1,7 @@
+Public
+- can be accessed outside of the class / object
+- the "things" we work with in our code
+
+Private
+- accessible ONLY INSIDE of the class / object
+- the "things" we work with in our class only (to split and reuse code)

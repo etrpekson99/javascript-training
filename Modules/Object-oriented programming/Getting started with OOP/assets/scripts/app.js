@@ -125,15 +125,17 @@ class ProductItem extends Component {
 class ProductList extends Component {
     // fields are created as properties when the constructor is called but only
     // after the parent constructor has been executed (after the super() call)
-    products = [];
+    #products = []; // new exception that sets this to a private property
+    // the convention is adding an _ before the property name, to indicate that it's a private property
 
     constructor(renderHookId) {
-        super(renderHookId);
-        this.fetchProducts();
+        super(renderHookId, false);
+        this.render();
+        this.#fetchProducts();
     }
 
-    fetchProducts() {
-        this.products = [
+    #fetchProducts() {
+        this.#products = [ // we also need # to access
             new Product('Pillow', 'https://cf.shopee.ph/file/3202d1df80b4929c0fc595bd473eb842', 19.99, 'a soft pillow'),
             new Product('Carpet', 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Wollteppich_1.jpg/1200px-Wollteppich_1.jpg', 89.99, 'a nice carpet'),
         ];
@@ -141,14 +143,14 @@ class ProductList extends Component {
     }
 
     renderProducts() {
-        for (const prod of this.products) {
+        for (const prod of this.#products) {
             new ProductItem(prod, 'prod-list'); 
         }
     }
 
     render() {
         this.createRootElement('ul', 'product-list', [new ElementAttribute('id', 'prod-list')]);
-        if (this.products && this.products.length > 0) {
+        if (this.#products && this.#products.length > 0) {
             this.renderProducts();
         }
     }
