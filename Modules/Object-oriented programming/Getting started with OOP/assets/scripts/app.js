@@ -66,7 +66,12 @@ class ShoppingCart extends Component {
 
     constructor(renderHookId) {
         // allows us to call the parent constructor, in this case the constructor of Component
-        super(renderHookId); 
+        super(renderHookId, false); 
+        this.orderProducts = () => { // remember: arrow functions do not care what we bound to "this"
+            console.log('ordering...');
+            console.log(this.items);
+        };
+        this.render();
     }
 
     addProduct(product) {
@@ -81,7 +86,9 @@ class ShoppingCart extends Component {
             <h2>Total \$${0}</h2>
             <button>Order now!</button>
         `;
-        
+        const orderButton = cartEl.querySelector('button');
+        orderButton.addEventListener('click', this.orderProducts);
+
         this.totalOutput = cartEl.querySelector('h2'); // we can add properties to our class anywhere
     }
 }
