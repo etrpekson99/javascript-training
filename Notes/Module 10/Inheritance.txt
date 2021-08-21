@@ -1,0 +1,21 @@
+Inheritance allows us to conveniently share code among classes.
+- building multiple classes with code duplication is suboptimal
+- inheritance allows us to extend a base class to other classes
+
+Rules of constructors
+- if your sub-class (class that extends another class) does not
+  have a constructor, the constructor of the parent class is
+  automatically called
+- if we add a constructor to our sub-class (the class that is extending),
+  that constructor will be called, and the constructor of the parent
+  class will not be called
+
+super()
+- this will call the constructor in the parent class
+- we want to this in our constructors if we want our parent class'
+  constructor to also be executed
+- when we add super() to our constructor, we have to make sure that
+  we aren't relying on any field in that super constructor method
+- if we plan on adding properties using our constructor, we have to
+  do that AFTER we call super(). We always have to call super first
+  before we start using "this" inside of our sub-class constructor
