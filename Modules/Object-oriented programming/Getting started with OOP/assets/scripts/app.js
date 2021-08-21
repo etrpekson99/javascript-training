@@ -3,23 +3,20 @@ class Product {
     imageUrl;
     description;
     price;
+
+    // this method is called when we create a new instance of this class
+    constructor(title, image, descr, price) {
+        this.title = title;
+        this.imageUrl = image;
+        this.description = descr;
+        this.price = price;
+    }
 }
 
 const productList = {
     products: [
-        new Product(),
-        {
-            title: 'Pillow',
-            imageUrl: 'https://cf.shopee.ph/file/3202d1df80b4929c0fc595bd473eb842',
-            price: 19.99,
-            description: 'a soft pillow'
-        },
-        {
-            title: 'Carpet',
-            imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Wollteppich_1.jpg/1200px-Wollteppich_1.jpg',
-            price: 79.99,
-            description: 'a nice carpet'
-        }
+        new Product('Pillow', 'https://cf.shopee.ph/file/3202d1df80b4929c0fc595bd473eb842', 19.99, 'a soft pillow'),
+        new Product('Carpet', 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Wollteppich_1.jpg/1200px-Wollteppich_1.jpg', 89.99, 'a nice carpet'),
     ],
     render() {
         const renderHook = document.getElementById('app');
