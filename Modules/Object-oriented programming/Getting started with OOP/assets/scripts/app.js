@@ -16,6 +16,13 @@ class Product {
 class ShoppingCart {
     items = [];
 
+    addProduct(product) {
+        this.items.push(product);
+        this.totalOutput.innerHTML = `
+            <h2>Total \$${1}</h2>
+        `
+    }
+
     render() {
         const cartEl = document.createElement('section');
         cartEl.innerHTML = `
@@ -23,6 +30,7 @@ class ShoppingCart {
             <button>Order now!</button>
         `;
         cartEl.className = 'cart';
+        this.totalOutput = cartEl.querySelector('h2'); // we can add properties to our class anywhere
         return cartEl;
     }
 }
@@ -33,8 +41,7 @@ class ProductItem {
     }
 
     addToCart() {
-        console.log('adding product to cart')
-        console.log(this.product);
+        App.addProductToCart(this.product);
     }
 
     render() {
@@ -82,8 +89,8 @@ class Shop {
     render() {
         const renderHook = document.getElementById('app');
         
-        const cart = new ShoppingCart();
-        const cartEl = cart.render();
+        this.cart = new ShoppingCart();
+        const cartEl = this.cart.render();
 
         const productList = new ProductList();
         const prodListEl = productList.render();
@@ -93,5 +100,18 @@ class Shop {
     }
 }
 
-const shop = new Shop();
-shop.render();
+class App {
+    static cart;
+
+    static init() {
+        const shop = new Shop();
+        shop.render();
+        this.cart = shop.cart; // when you use "this" in a static method, it always refers to the class itself
+    }
+
+    static addProductToCart(product) {
+        this.cart.addProduct(product);
+    }
+}
+
+App.init();

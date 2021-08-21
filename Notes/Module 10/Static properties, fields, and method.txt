@@ -1,0 +1,9 @@
+Static property / field / method
+- defined with the "static" keyword
+- only accessible on class itself, without instantation
+- typically used in helper classes, global config, etc
+
+Instance property / field / method
+- defined w/o "static" keyword
+- only accessible on instance (= objects) based on class
+- used for core, re-usable logic
