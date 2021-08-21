@@ -104,7 +104,7 @@ class App {
     static cart;
 
     static init() {
-        const shop = new Shop();
+        const shop = new Shop(); // this is a regular JS object / reference to that object
         shop.render();
         this.cart = shop.cart; // when you use "this" in a static method, it always refers to the class itself
     }

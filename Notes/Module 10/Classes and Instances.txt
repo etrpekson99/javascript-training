@@ -6,3 +6,7 @@ Classes
 - class-based creation is an alternative to using object literals { ... }
 - classes can make the creation of multiple, similar objects much easier
 - all classes have to be defined before the code that is used to execute them
+
+When to use classes?
+- great when you re-create the same type of object over and over again
+- more overhead initially but easy "object duplication" thereafter
