@@ -1,5 +1,13 @@
+class Product {
+    title = 'DEFAULT';
+    imageUrl;
+    description;
+    price;
+}
+
 const productList = {
     products: [
+        new Product(),
         {
             title: 'Pillow',
             imageUrl: 'https://cf.shopee.ph/file/3202d1df80b4929c0fc595bd473eb842',
