@@ -18,6 +18,11 @@ class ProductItem {
         this.product = product;
     }
 
+    addToCart() {
+        console.log('adding product to cart')
+        console.log(this.product);
+    }
+
     render() {
         const prodEl = document.createElement('li');
         prodEl.className = 'product-item';
@@ -28,9 +33,12 @@ class ProductItem {
                     <h2>${this.product.title}</h2>
                     <h3>${this.product.price}</h3>
                     <p>${this.product.description}</p>
+                    <button>Add to Cart</button>
                 </div>
             </div>
         `;
+        const addToCartBtn = prodEl.querySelector('button');
+        addToCartBtn.addEventListener('click', this.addToCart.bind(this)); // "this" refers to the entire object
         return prodEl;
     }
 }
