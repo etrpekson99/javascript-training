@@ -1,26 +1,37 @@
 class Product {
     title = 'DEFAULT';
     imageUrl;
-    description;
     price;
+    description;
 
     // this method is called when we create a new instance of this class
-    constructor(title, image, descr, price) {
+    constructor(title, image, price, descr) {
         this.title = title;
         this.imageUrl = image;
-        this.description = descr;
         this.price = price;
+        this.description = descr;
     }
 }
 
 class ShoppingCart {
     items = [];
 
-    addProduct(product) {
-        this.items.push(product);
+    get totalAmount() {
+        const sum = this.items.reduce((prevValue, currItem) => prevValue + currItem.price, 0);
+        return sum;
+    }
+
+    set cartItems(value) {
+        this.items = value;
         this.totalOutput.innerHTML = `
-            <h2>Total \$${1}</h2>
-        `
+            <h2>Total \$${this.totalAmount.toFixed(2)}</h2>
+        `;
+    }
+
+    addProduct(product) {
+        const updatedItems = [...this.items];
+        updatedItems.push(product);
+        this.cartItems = updatedItems;
     }
 
     render() {
