@@ -1,0 +1,12 @@
+Class Fields vs Properties
+class Prodcut {
+    category = 'DEFAULT';
+    constructor(title) {
+        this.title = title;
+    }
+}
+
+category = 'DEFAULT' -> this is the Class Field
+this.title = title -> this is the Class Property
+
+Fields define properties for classes
