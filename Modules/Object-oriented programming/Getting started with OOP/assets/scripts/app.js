@@ -21,11 +21,13 @@ class ElementAttribute {
 }
 
 class Component {
-    constructor(renderHookId) {
+    constructor(renderHookId, shouldRender = true) {
         this.hookId = renderHookId;
         // it will do this in the sub-class, because "this" always refers to whatever called the constructor
         // in this case, it will be the sub-classes
-        this.render(); 
+        if (shouldRender){
+            this.render(); 
+        }
     }
 
     render() {}
@@ -86,8 +88,9 @@ class ShoppingCart extends Component {
 
 class ProductItem extends Component {
     constructor(product, renderHookId) {
-        super(renderHookId); // do this first before using "this"
+        super(renderHookId, false); // do this first before using "this"
         this.product = product;
+        this.render();
     }
 
     addToCart() {
@@ -113,19 +116,33 @@ class ProductItem extends Component {
 }
 
 class ProductList extends Component {
-    products = [
-        new Product('Pillow', 'https://cf.shopee.ph/file/3202d1df80b4929c0fc595bd473eb842', 19.99, 'a soft pillow'),
-        new Product('Carpet', 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Wollteppich_1.jpg/1200px-Wollteppich_1.jpg', 89.99, 'a nice carpet'),
-    ];
+    // fields are created as properties when the constructor is called but only
+    // after the parent constructor has been executed (after the super() call)
+    products = [];
 
     constructor(renderHookId) {
         super(renderHookId);
+        this.fetchProducts();
+    }
+
+    fetchProducts() {
+        this.products = [
+            new Product('Pillow', 'https://cf.shopee.ph/file/3202d1df80b4929c0fc595bd473eb842', 19.99, 'a soft pillow'),
+            new Product('Carpet', 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Wollteppich_1.jpg/1200px-Wollteppich_1.jpg', 89.99, 'a nice carpet'),
+        ];
+        this.renderProducts();
+    }
+
+    renderProducts() {
+        for (const prod of this.products) {
+            new ProductItem(prod, 'prod-list'); 
+        }
     }
 
     render() {
         this.createRootElement('ul', 'product-list', [new ElementAttribute('id', 'prod-list')]);
-        for (const prod of this.products) {
-            new ProductItem(prod, 'prod-list'); 
+        if (this.products && this.products.length > 0) {
+            this.renderProducts();
         }
     }
 }
@@ -136,7 +153,7 @@ class Shop {
     }
 
     render() {
-        this.cart = new ShoppingCart('app');new ProductList('app');
+        this.cart = new ShoppingCart('app');
         new ProductList('app');
     }
 }
@@ -145,12 +162,12 @@ class App {
     static cart;
 
     static init() {
-        new Shop(); // this is a regular JS object / reference to that object
-        this.cart = shop.cart; // when you use "this" in a static method, it always refers to the class itself
+        const shop = new Shop(); // this is a regular JS object / reference to that object
+        this.cart = shop.cart; 
     }
 
     static addProductToCart(product) {
-        this.cart.addProduct(product);
+        this.cart.addProduct(product); // when you use "this" in a static method, it always refers to the class itself
     }
 }
 
