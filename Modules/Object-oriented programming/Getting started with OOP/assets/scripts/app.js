@@ -23,7 +23,12 @@ class ElementAttribute {
 class Component {
     constructor(renderHookId) {
         this.hookId = renderHookId;
+        // it will do this in the sub-class, because "this" always refers to whatever called the constructor
+        // in this case, it will be the sub-classes
+        this.render(); 
     }
+
+    render() {}
 
     createRootElement(tag, cssClasses, attributes) {
         const rootElement = document.createElement(tag);
@@ -120,19 +125,19 @@ class ProductList extends Component {
     render() {
         this.createRootElement('ul', 'product-list', [new ElementAttribute('id', 'prod-list')]);
         for (const prod of this.products) {
-            const productItem = new ProductItem(prod, 'prod-list');
-            productItem.render();
+            new ProductItem(prod, 'prod-list'); 
         }
     }
 }
 
 class Shop {
-    render() {
-        this.cart = new ShoppingCart('app');
-        this.cart.render();
+    constructor() {
+        this.render();
+    }
 
-        const productList = new ProductList('app');
-        productList.render();
+    render() {
+        this.cart = new ShoppingCart('app');new ProductList('app');
+        new ProductList('app');
     }
 }
 
@@ -140,8 +145,7 @@ class App {
     static cart;
 
     static init() {
-        const shop = new Shop(); // this is a regular JS object / reference to that object
-        shop.render();
+        new Shop(); // this is a regular JS object / reference to that object
         this.cart = shop.cart; // when you use "this" in a static method, it always refers to the class itself
     }
 
