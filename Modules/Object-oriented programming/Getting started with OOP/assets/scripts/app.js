@@ -181,3 +181,17 @@ class App {
 }
 
 App.init();
+
+// ----------------------------------------------------------------------------------------------------------------------------------
+// instanceOf operator - used to check if an object is created based on a certain class or a certain blueprint
+class Person {
+    name = 'Elijah';
+}
+
+const p = new Person();
+const isInstanceOfPerson = p instanceof Person;
+console.log(isInstanceOfPerson); // true
+
+const btn = document.querySelector('button');
+const isHTMLButtonElement = btn instanceof HTMLButtonElement;
+console.log(isHTMLButtonElement);  // true
