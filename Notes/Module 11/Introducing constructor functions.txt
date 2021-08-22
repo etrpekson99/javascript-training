@@ -1,0 +1,9 @@
+Constructor Functions vs Classes
+
+Constructor functions
+- blueprint for objects
+- hold properties and methods
+
+Classes
+- blueprint for objects
+- hold properties and methods
