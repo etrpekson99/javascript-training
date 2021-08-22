@@ -47,6 +47,13 @@ PersonFunc.prototype = {
     }
 }
 
+// this is added on the PersonFunc itself
+// and won't necessarily be added to the
+// object created using PersonFunc
+PersonFunc.describe = function() {
+    console.log(this.name);
+}
+
 // an alternative and better approach would be to manually add
 // printAge like this:
 // PersonFunc.prototype.printAge = function() {
@@ -66,8 +73,17 @@ console.log(personFunc.toString()); // this will work because of prototypes
 // this is the default object every custom constructor function
 // assigns to an object based on it
 personFunc.printAge();
-console.log(personFunc.toString());
+console.log(personFunc.toString()); // this will still work because the prototype chain doesn't end at the default prototype
 console.log(person.__proto__);
 
 // prototype in Person.prototype is not a fallback for the Person class / constructor function
 console.log(person.__proto__ === Person.prototype); // true, 
+
+// this is a constructor function built into JS
+// it has a bunch of built-in properties and methods
+// everything in Object are static properties and static methods
+console.dir(Object);
+
+console.dir(PersonFunc);
+
+console.dir(Object.prototype.__proto__); // null

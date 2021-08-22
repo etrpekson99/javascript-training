@@ -3,8 +3,12 @@ Constructor Functions vs Classes
 Constructor functions
 - blueprint for objects
 - hold properties and methods
+- a function which can be called together with the new keyword
+  to create an object based on it
 
 Classes
 - blueprint for objects
 - hold properties and methods
 - gave us an easy way to write bluepring definitions
+- exactly like constructor functions but is just syntactical sugar at the
+  end of the day

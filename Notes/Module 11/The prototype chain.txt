@@ -24,7 +24,11 @@ p.__proto__.__proto__.breathe()
 
 ....this continues until Object.prototype which is the GLOBAL "Object"
 
+The default prototype of every object can be found on the global Object()
 
+The FALLBACK object of every object is NOT Object(), but Object.prototype
+
+Object.prototype has no prototype itself
 
 ------------------------------------------------------------------------------------------
 Prototype does not exist on EVERY object. It exists on FUNCTION objects.
