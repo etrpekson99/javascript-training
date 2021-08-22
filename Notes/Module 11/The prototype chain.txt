@@ -1,0 +1,30 @@
+for example we have a class or constructor function:
+class Person { ... }
+
+then we initialize an new instance of it:
+const p = new Person();
+
+and we call a method that could or could not be in the Person() class:
+p.breathe()
+
+first, JS will check if breathe() is defined in Person itself
+(i.e. set up in the blueprint)
+
+if yes, then JS will execute the function
+
+if no, the JS will look to the prototype:
+p.__proto__.breathe() -> this is basically the base class of the Person object
+
+JS will check if it exists in the prototype
+
+if yes, then JS will execute that
+
+if no, then JS will look to the prototype of the prototype:
+p.__proto__.__proto__.breathe()
+
+....this continues until Object.prototype which is the GLOBAL "Object"
+
+
+
+------------------------------------------------------------------------------------------
+Prototype does not exist on EVERY object. It exists on FUNCTION objects.

@@ -1,0 +1,32 @@
+JS is a prototype-based language
+- it uses prototypical inheritance
+- the class syntax is just syntacting sugar
+- constructor functions and prototypes power JS object
+- every constructor function we build has a special prototype property
+  which is not added to the object we create based on it because it's not
+  a property but a part of the FUNCTION object
+- constructor prototype is assigned to instance upon creation
+
+Why does EVERY object have prototype?
+- it's how JS shares code in the end
+- "fallback" objects
+- objects JS has a look at if it searches for certain property or a method
+  it can't find on the object it started looking at
+- every prototype is also an object, which also has its own prototype
+
+for example, we have a person object:
+const person = { name, greet };
+
+and we call a sayHello method:
+person.sayHello()
+
+if JS does not find sayHello() in the person object,
+it "falls back" on the object's prototype and looks
+for sayHello() in that object. it executes it if it finds it
+
+"JS automatically looks into the prototype of the object and
+searches for the property of method there"
+
+The prototype is the "base class" that we can reach out to
+for properties and methods that do not exist in the objects
+we create ourselves.
