@@ -7,3 +7,4 @@ Constructor functions
 Classes
 - blueprint for objects
 - hold properties and methods
+- gave us an easy way to write bluepring definitions
