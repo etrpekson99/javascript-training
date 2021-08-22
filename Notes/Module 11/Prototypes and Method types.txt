@@ -1,0 +1,29 @@
+Method Shorthand
+- assigned to Person's prototype and hence shared across all instances (NOT re-created per instance).
+
+class Person {
+    greet() {
+        console.log('hello);
+    }
+}
+
+Property Function
+- assigned to individual instances and hence RE-CREATED per object. "this"
+  refers to "what called the method".
+
+class Person {
+    greet = function() { ... }
+    constructor() {
+        this.greet2 = function() { ... }
+    }
+}
+
+Property Arrow Function
+- assigned to individual instances and hence RE-CREATED per object. "this" always refers to the instance
+
+class Person {
+    greet = () => { ... }
+    constructor() {
+        this.greet2 = () => { ... }
+    }
+}
