@@ -5,6 +5,9 @@ Constructor functions
 - hold properties and methods
 - a function which can be called together with the new keyword
   to create an object based on it
+- can be called with "new"
+- all properties and methods are enumerable (can be called in for-in loop)
+- not in strict mode by default
 
 Classes
 - blueprint for objects
@@ -12,3 +15,6 @@ Classes
 - gave us an easy way to write bluepring definitions
 - exactly like constructor functions but is just syntactical sugar at the
   end of the day
+- MUST be called with "new"
+- Methods are NON-ENUMERABLE (cannot be called in for-in loop)
+- ALWAYS in strict mode
