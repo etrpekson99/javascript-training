@@ -30,5 +30,10 @@ The FALLBACK object of every object is NOT Object(), but Object.prototype
 
 Object.prototype has no prototype itself
 
+__proto__ points to the prototype assigned to the object. This is available on every object
+
+The prototype property allows us to configure what will be added to objects
+that are created based on a constructor function.
+
 ------------------------------------------------------------------------------------------
 Prototype does not exist on EVERY object. It exists on FUNCTION objects.
