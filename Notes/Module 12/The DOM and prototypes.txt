@@ -1,0 +1,8 @@
+Every HTMLElement is inheriting from Element,
+thus has an Element prototype
+
+Any Element prototype has a Node prototype
+
+Any Node prototype has an EventTarget prototype
+
+And we have even more specific types of HTMLElements
