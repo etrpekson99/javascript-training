@@ -1,0 +1,18 @@
+new Date()
+- gives us the current date and timestamp
+- we can store it in a constant -> const date = new Date();
+
+date.getDate()
+- gives us the day in month
+
+date.getDay()
+- get the day in week
+
+date.getTime()
+- get the time in milliseconds since January 1st, 1970
+- can be helpful when calculating differences
+
+we can pass to new Date() that JS tries to parse:
+const date2 = new Date('07/11/19')
+
+(date - date2) / 1000 / 60 / 60 / 24 -> give us the difference in days
