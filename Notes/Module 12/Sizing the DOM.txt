@@ -1,0 +1,39 @@
+the browser window is mapped into pixels with the (0, 0) coordinate
+starting at the upper left corner of the screen
+
+$0
+- allows us to select a dom element
+
+$0.getBoundingClientRect
+- returns the coordinates of the selected element
+
+$0.offsetTop
+- returns the position on the y-axis (in the coordinate system)
+$0.offsetLeft
+- returns the position on the x-axis (in the coordinate system)
+
+$0.clientTop & $0.clientLeft 
+- give us the inner positioning, they tell us how far
+  it is from the left and top-most point of the element to the left and top-most
+  point of the content of the element
+- the content of the box is the entire box minus the borders and scrollbars
+  rendered in the element
+
+$0.offsetHeight & $0.offsetWidth
+- entire height and width of element, including all borders and scrollbars
+
+$0.clientWidth & $0.clientHeight
+- the inner width and height without borders and scrollbars
+
+$0.scrollHeight
+- entire height of the content including the part which is -currently- not
+  visible in the box (unless scrolled to)
+
+$0.scrollTop
+- gives us information on how much we've scrolled in the element
+
+window.innerWidth & window.innerHeight
+- gives us the height and width of our window, without the dev tools, etc
+
+document.documentElement.clientWidth & document.documentElement.clientWidth
+- more reliable because they deduct any visible scrollbars
