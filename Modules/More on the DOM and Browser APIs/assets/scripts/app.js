@@ -173,6 +173,24 @@ class App {
 
         activeProjectsList.setSwitchHandlerFunction(finishedProjectsList.addProject.bind(finishedProjectsList));
         finishedProjectsList.setSwitchHandlerFunction(activeProjectsList.addProject.bind(activeProjectsList));
+
+        // create a new script in JS
+        // this will be more useful if we have another script file
+        // and we want to only download it at a specific point
+        // and we want to control when this script is executed
+        // from inside our JS code
+        // const someScript = document.createElement('script');
+        // someScript.textContent = 'alert("hi there")';
+        // document.head.append(someScript);
+
+        document.getElementById('start-analytics-btn').addEventListener('click', this.startAnalytics);
+    }
+
+    static startAnalytics() {
+        const analyticsScript = document.createElement('script');
+        analyticsScript.src = 'assets/scripts/analytics.js'; // set up a path the same as it would be when we add it to an HTML file
+        analyticsScript.defer = true; // only loaded when all HTML parsing is done
+        document.head.append(analyticsScript);
     }
 }
 
