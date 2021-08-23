@@ -37,3 +37,11 @@ window.innerWidth & window.innerHeight
 
 document.documentElement.clientWidth & document.documentElement.clientWidth
 - more reliable because they deduct any visible scrollbars
+
+$0.scrollTo(x, y)
+- will scroll the element to a given coordinate
+- this is for absolute values
+- also can work like this -> scrollTo({ top: 50, behavior: 'smooth' })
+
+$0.scrollBy(px, px)
+- we pass how many pixels we want to scroll by
