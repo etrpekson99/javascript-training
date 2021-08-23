@@ -1,0 +1,6 @@
+throw new Error('something went wrong')
+- the string will be the error
+- we can throw anything as an error, which will cause an error
+- but it is better to throw an error with the Error() constructor function
+- this can also show where the error was thrown, therefore giving us more information
+- since it's an object, we can add stuff to it, therefore we can add extra information
