@@ -41,8 +41,8 @@ class Component {
 }
 
 class Tooltip extends Component {
-    constructor(closeNotifierFunction, text) {
-        super();
+    constructor(closeNotifierFunction, text, hostElementId) {
+        super(hostElementId);
         this.closeNotifier = closeNotifierFunction;
         this.text = text;
         this.create();
@@ -57,6 +57,27 @@ class Tooltip extends Component {
         const tooltipElement = document.createElement('div');
         tooltipElement.className = 'card';
         tooltipElement.textContent = this.text;
+        // console.log(this.hostElement.getBoundingClientRect());
+        const hostElPositionLeft = this.hostElement.offsetLeft; // y-coordinate
+        const hostElPositionTop = this.hostElement.offsetTop; // x-coordinate
+        const hostElHeight = this.hostElement.clientHeight; // height of content
+
+        // we get this because the element's coordinates ignore whether
+        // the element has been scrolled somewhere or not
+        const parentElementScrolling = this.hostElement.parentElement.scrollTop;
+
+        const x = hostElPositionLeft + 20; // these are always in pixels
+        // since our coordinate system starts in the top-left corner,
+        // we push elements further down. The browsers lays out the
+        // webpage from the top-left to the bottom-right
+        const y = hostElPositionTop + hostElHeight - parentElementScrolling - 10;
+
+        // position the element in the absolute coordinate system in the screen
+        // otherwise it will always be positioned relative in the document flow
+        tooltipElement.style.position = 'absolute';
+        tooltipElement.style.left = `${x}px`;
+        tooltipElement.style.top = `${y}px`;
+
 
         tooltipElement.addEventListener('click', this.closeTooltip.bind(this));
         this.element = tooltipElement;
@@ -80,12 +101,12 @@ class ProjectItem {
         const projectElement = document.getElementById(this.id);
 
         // allows us to reach the data- attributes
-        console.log(projectElement.dataset); // this will output an object containing all data- attributes
+        // console.log(projectElement.dataset); // this will output an object containing all data- attributes
 
         const tooltipText = projectElement.dataset.extraInfo;
         const tooltip = new Tooltip(() => {
             this.hasActiveTooltip = false;
-        }, tooltipText);
+        }, tooltipText, this.id);
         tooltip.attach();
         this.hasActiveTooltip = true;
     }
