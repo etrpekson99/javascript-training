@@ -1,0 +1,30 @@
+location
+- contains data about the URL of our page
+- allows us to edit browser history
+
+location.href
+- navigate to a given page that we assign to it
+
+location.replace
+- we can't go back if we set a page using this because it replaces it in the browser history
+
+location.assign
+- works the same as location.href, but this one is a method
+
+location.host
+- tells us which host the page is running / the domain
+
+---------------------------------------------------------------
+history
+- allows us to interact with browser history
+
+history.back
+- takes us back to the page we came from
+
+history.go(x)
+- take the user back x number of pages from where they are now
+
+history.length
+- how many steps the user did in a tab in the browser
+
+!!important: moving the user around may not provide with the best UX, so use these functions with care
