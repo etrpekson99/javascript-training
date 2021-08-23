@@ -1,0 +1,4 @@
+<template> tag
+- it's content is not rendered but it's part of the DOM,
+  so we can query it and use it
+- allows us to split our JS code and our HTML code
