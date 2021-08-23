@@ -183,7 +183,19 @@ class App {
         // someScript.textContent = 'alert("hi there")';
         // document.head.append(someScript);
 
-        document.getElementById('start-analytics-btn').addEventListener('click', this.startAnalytics);
+        // sets a timer
+        // accepts a function that executes when the timer expires
+        // also accepts the amount of time we want to wait before the timer ends
+        // this will not pause script execution, instead it will execute the function inside when the
+        // timer expires
+        // we can also pass a third argument which is an array, that would be the
+        // arguments we want to pass to the callback function
+        const timerId = setTimeout(this.startAnalytics, 3000);
+
+        // document.getElementById('start-analytics-btn').addEventListener('click', this.startAnalytics);
+        document.getElementById('stop-analytics-btn').addEventListener('click', () => {
+            clearTimeout(timerId);
+        });
     }
 
     static startAnalytics() {
