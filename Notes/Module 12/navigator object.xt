@@ -1,0 +1,9 @@
+navigator
+- allows us to interact with the browser and the user's OS
+  in a LIMITED way
+
+navigator.clipboard
+- allows us to copy things to the clipboard
+
+reference:
+https://developer.mozilla.org/en-US/docs/Web/HTTP/Browser_detection_using_the_user_agent
