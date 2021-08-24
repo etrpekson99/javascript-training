@@ -21,6 +21,8 @@ const anotherButtonClickHandler = () => {
 
 // buttons.forEach(button => button.addEventListener('mouseenter', buttonClickHandler));
 
+// ----------------------------------------------------------------------------------------
+
 const form = document.querySelector('form');
 // only form elements can have submit
 form.addEventListener('submit', event => {
@@ -31,6 +33,8 @@ form.addEventListener('submit', event => {
     event.preventDefault();
     console.log(event);
 });
+
+// ----------------------------------------------------------------------------------------
 
 // bubbling and capturing
 // browser checks if there's an event listener for ancestor element
@@ -52,4 +56,28 @@ button.addEventListener('click', (event) => {
     // same element won't run anymore
     event.stopImmediatePropagation(); 
     console.log('btn');
+});
+
+// ----------------------------------------------------------------------------------------
+
+const listItems = document.querySelectorAll('li');
+// listItems.forEach(listItem => {
+//     listItem.addEventListener('click', event => {
+//         event.target.classList.toggle('highlight');
+//     })
+// })
+
+// instead of adding event listeners to each item,
+// we use this "delegate" pattern that takes advantage of
+// event propagation
+const list = document.getElementById('ul-1');
+list.addEventListener('click', event => {
+    // event.target will still refer to the actual target we clicked, the lowest DOM element
+    event.target.classList.toggle('highlight');
+});
+
+const list2 = document.getElementById('ul-2');
+list2.addEventListener('click', event => {
+    console.log(event.currentTarget); // currentTarget is the element where we actually added the listener
+    event.target.closest('li').classList.toggle('highlight');
 });
