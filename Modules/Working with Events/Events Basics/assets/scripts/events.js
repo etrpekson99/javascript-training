@@ -46,7 +46,7 @@ div.addEventListener('click', () => {
 // propagation, this means the event does not only happen on the
 // element itself, but also to the ancestors, allowing us to listen
 // to the same event on the ancestors because it "bubbles" / "propagates" up
-button.addEventListener('click', (event) => {
+button.addEventListener('click', function (event) {
     // this means any other listeners any other event on some
     // ancestor elements will NOT trigger their event listeners
     // for this event
@@ -54,8 +54,9 @@ button.addEventListener('click', (event) => {
 
     // this means any other listeners on the 
     // same element won't run anymore
-    event.stopImmediatePropagation(); 
+    // event.stopImmediatePropagation(); 
     console.log('btn');
+    console.log(this); // by default, "this" points to current target, the element where we registered the listener
 });
 
 // ----------------------------------------------------------------------------------------
