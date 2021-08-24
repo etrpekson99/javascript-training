@@ -1,0 +1,8 @@
+Events in JS
+- most programming languages have some sort of event architecture
+- the idea is we can run code only when certain events trigger
+- events typically transport data
+
+Browser Event Objects
+- we have an Event constructor function that is broken down
+  into specialized constructor functions as well
