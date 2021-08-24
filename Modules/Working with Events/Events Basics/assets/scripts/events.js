@@ -1,6 +1,7 @@
 // with vanilla js, we should always try to avoid
 // adding event listeners in the HTML code e.g. onclick
-const buttons = document.querySelectorAll('button');
+const button = document.querySelector('button');
+const div = document.querySelector('div');
 
 // should always be set to a function
 // button.onclick = function() {}
@@ -29,4 +30,26 @@ form.addEventListener('submit', event => {
     // data and submitting it to the server
     event.preventDefault();
     console.log(event);
-})
+});
+
+// bubbling and capturing
+// browser checks if there's an event listener for ancestor element
+// and executes that as well
+div.addEventListener('click', () => {
+    console.log('div');
+}, true); // true -> this event listener should be part of the capturing phase, therefore this will run first
+
+// propagation, this means the event does not only happen on the
+// element itself, but also to the ancestors, allowing us to listen
+// to the same event on the ancestors because it "bubbles" / "propagates" up
+button.addEventListener('click', (event) => {
+    // this means any other listeners any other event on some
+    // ancestor elements will NOT trigger their event listeners
+    // for this event
+    event.stopPropagation(); 
+
+    // this means any other listeners on the 
+    // same element won't run anymore
+    event.stopImmediatePropagation(); 
+    console.log('btn');
+});
