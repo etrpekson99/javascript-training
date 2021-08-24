@@ -6,7 +6,7 @@ const buttons = document.querySelectorAll('button');
 // button.onclick = function() {}
 
 const buttonClickHandler = event => {
-    event.target.disabled = true;
+    // event.target.disabled = true;
     console.log(event);
 };
 
@@ -18,4 +18,8 @@ const anotherButtonClickHandler = () => {
 // allows us to add multiple event listeners to the same element
 // button.addEventListener('click', buttonClickHandler); 
 
-buttons.forEach(button => button.addEventListener('click', buttonClickHandler));
+buttons.forEach(button => button.addEventListener('mouseenter', buttonClickHandler));
+
+window.addEventListener('scroll', event => {
+    console.log(event); // an event is fired every time we scroll, we should be careful with using it
+});

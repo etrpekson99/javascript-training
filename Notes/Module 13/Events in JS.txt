@@ -6,3 +6,4 @@ Events in JS
 Browser Event Objects
 - we have an Event constructor function that is broken down
   into specialized constructor functions as well
+- we can register events to any DOM element

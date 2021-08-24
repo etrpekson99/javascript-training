@@ -1,1 +1,6 @@
-the target property tells us what (element) triggered the event
+the target property
+- tells us what (element) triggered the event
+
+relatedTarget property
+- tells us where our mouse cursor was before entering the element
+  related to the event
