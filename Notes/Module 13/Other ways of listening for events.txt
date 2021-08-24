@@ -1,0 +1,5 @@
+this is better than using an attribute in HTML
+but it has one downside: we can only add one handler to this element
+
+button.onclick = buttonClickHandler;
+button.onclick = anotherButtonClickHandler; -> this will overried the previous listener

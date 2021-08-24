@@ -1,0 +1,12 @@
+button.addEventListener('click', buttonClickHandler); 
+button.removeEventListener('click', buttonClickHandler);
+
+a couple of pitfalls of removeEventListener:
+- will not work if we use an anonymous function since we will
+  use two different functions from add and remove event listener
+- we have to make sure we store the event handler functions
+  in constants
+- we will again have to store the bound function in a new constant:
+  const boundFn = buttonClickHandler.bind(this);
+  button.addEventListener('click', boundFn); 
+  button.removeEventListener('click', boundFn);

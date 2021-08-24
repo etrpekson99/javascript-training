@@ -1,0 +1,1 @@
+the target property tells us what (element) triggered the event
