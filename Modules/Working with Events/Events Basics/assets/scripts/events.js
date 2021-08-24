@@ -18,8 +18,15 @@ const anotherButtonClickHandler = () => {
 // allows us to add multiple event listeners to the same element
 // button.addEventListener('click', buttonClickHandler); 
 
-buttons.forEach(button => button.addEventListener('mouseenter', buttonClickHandler));
+// buttons.forEach(button => button.addEventListener('mouseenter', buttonClickHandler));
 
-window.addEventListener('scroll', event => {
-    console.log(event); // an event is fired every time we scroll, we should be careful with using it
-});
+const form = document.querySelector('form');
+// only form elements can have submit
+form.addEventListener('submit', event => {
+    // this exists on any event in JS
+    // this prevents the default behavior the browser would apply otherwise
+    // the default behavior of submit form is taking the form
+    // data and submitting it to the server
+    event.preventDefault();
+    console.log(event);
+})
