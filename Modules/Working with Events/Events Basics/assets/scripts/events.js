@@ -80,4 +80,11 @@ const list2 = document.getElementById('ul-2');
 list2.addEventListener('click', event => {
     console.log(event.currentTarget); // currentTarget is the element where we actually added the listener
     event.target.closest('li').classList.toggle('highlight');
+
+    // if we trigger a form submission programmatically,
+    // the event listener is skipped, unlike when we do it with button.click()
+    // form.submit();
 });
+
+// ----------------------------------------------------------------------------------------
+
