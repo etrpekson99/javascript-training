@@ -1,0 +1,11 @@
+Mark elements as "draggable"
+
+Listen to "dragstart" Evet
+
+Accept Drop via "dragenter" and "dragover" Events => preventDefault()
+
+Optional: listen to "dragleave" event
+
+Listen to "drop" Event and update data / UI
+
+Optional: Listen to "dragend" Event and update data / UI
