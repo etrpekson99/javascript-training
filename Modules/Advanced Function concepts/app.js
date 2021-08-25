@@ -61,3 +61,30 @@ multiplier = 1.2;
 
 console.log(calculateVatAmount(100));
 console.log(calculateIncomeTaxAmount(100));
+
+// --------------------------------------------------------------------------------------------------------
+
+// Closures in practice
+
+let userName = 'Elijah';
+
+function greetUser() {
+    // when a function executes, it first checks the variables within the environment
+    // only when it doesn't find the variable in the inner environment then it
+    // goes "outwards" and checks the outer lexical environment.
+    // here, we have the "name" variable existing within the function's environment,
+    // so it no longer needs to look at the outer lexical environment for a "name",
+    // this would obviously be different if we didn't have "name" in the inner lexical
+    // environment of this function
+    let name = 'Hannah'; // the inner environment "wins" over the outer environment
+    console.log(`Hi ${name}`); // the only thing we have is a pointer in the outer lexical environment
+}
+
+let name = 'Athena';
+
+userName = 'Tristan';
+
+// when the function executes, it reaches out to the
+// outer lexical environment and gets the latest value/s
+// of the data from "outside" that's used in the function
+greetUser(); // this will output "Hi Hannah"
