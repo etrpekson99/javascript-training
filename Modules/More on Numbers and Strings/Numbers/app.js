@@ -33,3 +33,13 @@ console.log((0.2 + 0.4).toFixed(2));
 console.log(20.2 * 100); // 2020 can be easily used in the binary system
 
 // --------------------------------------------------------------------------------------------------
+
+// the global Number and Math objects
+
+console.log(Number.POSITIVE_INFINITY); // special value in JS, the value we get when we divide by zero
+
+console.log(Number.isFinite(10)); // true
+console.log(Number.isFinite(Infinity)); // false
+
+console.log(Math.PI); // for working with the pi value
+console.log(Math.abs(-5)); // 5 -> gives the absolute value
