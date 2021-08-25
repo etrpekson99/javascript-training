@@ -118,3 +118,56 @@ function powerOf(x, n) {
 }
 
 console.log(powerOf(2, 3)); // 2 * 2 * 2
+
+// --------------------------------------------------------------------------------------------------------
+
+// advanced recursion
+const myself = {
+    name: 'Eli',
+    friends: [
+        {
+            name: 'Edil',
+            friends: [
+                {
+                    name: 'Paul',
+                    friends: [],
+                }
+            ],
+        },
+        {
+            name: 'Hannah',
+            friends: [
+                {
+                    name: 'Abi',
+                    friends: [],
+                }
+            ],
+        },
+        {
+            name: 'EJ',
+            friends: [
+                {
+                    name: 'Raph',
+                    friends: [],
+                }
+            ],
+        },
+    ]
+};
+
+function getFriendNames(person) {
+    const collectedNames = [];
+
+    if (!person.friends || !person.friends.length) { // we always need an exit condition in recursion
+        return [];
+    }
+
+    for(const friend of person.friends) {
+        collectedNames.push(friend.name);
+        collectedNames.push(...getFriendNames(friend));
+    }
+
+    return collectedNames;
+}
+
+console.log(getFriendNames(myself));
