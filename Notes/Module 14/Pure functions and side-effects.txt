@@ -1,0 +1,6 @@
+What's a apure function with side effects?
+- a pure function is a function with some given input (arguments)
+  always produces the SAME output
+- does not trigger any "side effects" meaning it does not change
+  anything "outside" of the function
+- functions that have predictable output
