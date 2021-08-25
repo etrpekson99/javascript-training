@@ -43,3 +43,12 @@ console.log(Number.isFinite(Infinity)); // false
 
 console.log(Math.PI); // for working with the pi value
 console.log(Math.abs(-5)); // 5 -> gives the absolute value
+
+// --------------------------------------------------------------------------------------------------
+
+// example: generate random number between min/max
+const randomIntBetween = (min, max) => { // min: 5, max: 10
+    return Math.floor(Math.random() * (max - min + 1) + min); // floor rounds this down to the nearest integer; 10.99999 -> 10
+}
+
+console.log(randomIntBetween(1, 10));
