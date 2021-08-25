@@ -1,0 +1,18 @@
+Every number is a float (a floating point number), a number w/ decimal places.
+
+Unlike other programming languages, JS does not know special integer types.
+
+Numbers like 5, -3, or 12 would actually be stored like 5.0, -3.0, or 12.0 respectively.
+
+Numbers are stored as 64 Bit Floating points in JS
+- there are 64 Bits available to internally represent a number
+- due to this fact, there are certain limits in JS
+- there is a max and minimum number
+- we can't represent EVERY number in JS
+
+We must always be aware of the fact that there are limits to
+representing numbers in JS.
+
+JS will give us an imprecise result when we try
+to calculate with the highest values that can
+be represented in JS.
