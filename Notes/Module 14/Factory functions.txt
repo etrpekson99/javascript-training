@@ -1,0 +1,2 @@
+Factory functions
+- functions that produce another function

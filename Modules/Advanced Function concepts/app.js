@@ -1,3 +1,5 @@
+// IMPORTANT: always try to keep your functions pure and not introduce any side-effects
+
 // this does not change anything outside the function
 function add(num1, num2) {
     return num1 + num2;
@@ -34,3 +36,20 @@ function printHobbies(h) {
 }
 
 printHobbies(hobbies);
+
+// --------------------------------------------------------------------------------------------------------
+
+// Factory functions
+function createTaxCalculator(tax) {
+    function calculateTax(amount) {
+        return amount * tax;
+    }
+
+    return calculateTax;
+}
+
+const calculateVatAmount = createTaxCalculator(0.19);
+const calculateIncomeTaxAmount = createTaxCalculator(0.25);
+
+console.log(calculateVatAmount(100));
+console.log(calculateIncomeTaxAmount(100));
