@@ -88,3 +88,8 @@ userName = 'Tristan';
 // outer lexical environment and gets the latest value/s
 // of the data from "outside" that's used in the function
 greetUser(); // this will output "Hi Hannah"
+
+// Modern JS engines optimize closures
+// the basically track variable usage and if a variable isn't getting
+// used by anything; not by any functions and nowhere else,
+// the JS engine will get rid of it
