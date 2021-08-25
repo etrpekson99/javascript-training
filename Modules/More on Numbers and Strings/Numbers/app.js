@@ -31,3 +31,5 @@ console.log((0.2 + 0.4).toFixed(2));
 
 // to get perfect precision, one solution would be to multiply by 100
 console.log(20.2 * 100); // 2020 can be easily used in the binary system
+
+// --------------------------------------------------------------------------------------------------

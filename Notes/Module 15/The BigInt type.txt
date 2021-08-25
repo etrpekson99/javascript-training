@@ -1,0 +1,14 @@
+the BigInt type
+- alternative to the normal number we work with all the time
+- allows us to represent numbers above the maximum safe integer
+- we create a BigInt by simply adding "n" at the end
+- internally, this is managed differently, not at as a 64-Bit number but as a string
+  and JS manages this for us when we use it in calculations
+- cannot be used with decimal places
+- we cannot mix BigInt with normal numbers
+  10n - 4 will not work instead:
+  parseInt(10n) - 4
+  10n - BigInt(4)
+  10n - 4n
+- if we divide two BigInt values, JS will omit the decimal places of the result if there are
+  any because decimals cannot be used with BigInt
