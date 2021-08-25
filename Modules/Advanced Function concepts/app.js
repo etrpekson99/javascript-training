@@ -40,9 +40,15 @@ printHobbies(hobbies);
 // --------------------------------------------------------------------------------------------------------
 
 // Factory functions
-function createTaxCalculator(tax) {
+let multiplier = 1.1;
+
+function createTaxCalculator(tax) { // we lock in tax because it is part of this lexical environment
     function calculateTax(amount) {
-        return amount * tax;
+        console.log(multiplier); // 1.2 -> we do NOT lock in the value of multiplier because it is not part of this function's lexical environment
+        // even if multiplier won't be used outside of this function anymore,
+        // JS will NOT throw away its value stored in it because we might
+        // still use it in this function
+        return amount * tax * multiplier;
     }
 
     return calculateTax;
@@ -50,6 +56,8 @@ function createTaxCalculator(tax) {
 
 const calculateVatAmount = createTaxCalculator(0.19);
 const calculateIncomeTaxAmount = createTaxCalculator(0.25);
+
+multiplier = 1.2;
 
 console.log(calculateVatAmount(100));
 console.log(calculateIncomeTaxAmount(100));

@@ -1,0 +1,13 @@
+EVERY FUNCTION IN JAVASCRIPT IS A CLOSURE
+
+*Section 15, video #328
+
+Why?
+
+Each function has its own lexical environment,
+and the variables and/or arguments are registered in these environments.
+
+In JS, every function is a closure because it "closes over"
+the variables defined in its environment and it "memorizes"
+them so they're not thrown away when we don't need them
+in the surrounding context anymore.
