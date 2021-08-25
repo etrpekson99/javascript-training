@@ -106,7 +106,7 @@ class ProjectItem {
   connectDrag() {
     document.getElementById(this.id).addEventListener('dragstart', event => {
       event.dataTransfer.setData('text/plain', this.id);
-      event.dataTransfer.effectAllowed = 'move';
+      event.dataTransfer.effectAllowed = 'move'; // describes which kind of drag and drop is being performed
     });
   }
 
