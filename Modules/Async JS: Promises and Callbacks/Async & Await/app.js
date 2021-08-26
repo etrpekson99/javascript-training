@@ -1,3 +1,5 @@
+// async / await still utilizes Promises
+
 const button = document.querySelector('button');
 const output = document.querySelector('p');
 
@@ -21,20 +23,15 @@ const getPosition = (opts) => {
     return promise;
 }
 
-function trackUserHandler() {
-  let positionData;
-  getPosition()
-  .then(posData => {
-      positionData = posData;
-      return setTimer();
-  })
-  .then(data => {
-      console.log(data, positionData);
-  })
-  .catch(err => {
-    console.log(err);
-    return 'continue';
-    });
+// async / await does NOT transform the way JS executes
+// it would still execute the same way when we would use a normal Promise instance
+async function trackUserHandler() { // with async added, the function now automatically returns a Promise
+  // waits for this Promise to resolve, only then will the next line execute
+  // also returns what the Promise resolves
+  const posData = await getPosition(); // we do NOT block code execution with async / await
+  const timerData = await setTimer(2000);
+
+  console.log(timerData, posData);
 }
 
 button.addEventListener('click', trackUserHandler); 
