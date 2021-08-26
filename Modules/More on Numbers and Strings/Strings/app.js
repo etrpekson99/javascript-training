@@ -43,3 +43,20 @@ console.log(test); // true
 console.log(regex.test('test.@com')); // false
 
 // ------------------------------------------------------------------------------------------------------------------
+
+// more on regex
+const regex2 = /hello/;
+console.log(regex2.test('hello')); // true
+console.log(regex2.test('hi hello')); // true
+console.log(regex2.test('Hello')); // false -> regex is case sensitive
+
+const regex3 = /(h|H)ello/; // meaning we don't care whether it starts with capital or lowercase letters
+console.log(regex3.test('hi Hello')); // true
+console.log(regex3.test('ello')); // false
+
+const regex4 = /.ello/; // -> we want to end with ello but we don't care what the word starts with
+console.log(regex4.test('oello')); // true
+
+// \S -> basically means any word
+// \. -> we are looking for a dot so we escape the dot in regex
+const emailRegex = /^\S+@\S+\.\S+$/;
