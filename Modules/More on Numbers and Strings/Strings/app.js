@@ -32,3 +32,14 @@ console.log(productOutput);
 
 // ------------------------------------------------------------------------------------------------------------------
 
+// regular expressions
+// - helps us search for patterns in strings
+const userInput = 'test@test.com';
+
+// const regex = new RegExp('');
+const regex = /^\S+@\S+\.\S+$/;
+const test = regex.test(userInput);
+console.log(test); // true
+console.log(regex.test('test.@com')); // false
+
+// ------------------------------------------------------------------------------------------------------------------
