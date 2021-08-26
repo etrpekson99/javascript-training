@@ -1,0 +1,12 @@
+Pending 
+- Promise is doing work, neither then() nor catch() executes at this moment
+
+Resolved
+- Promise is resolved -> then() executes
+
+Rejected
+- Promise was rejected -> catch() executes
+
+Settled
+- if there are no more then() blocks left
+- this is when we can use finally()
