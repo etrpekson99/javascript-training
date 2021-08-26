@@ -26,12 +26,17 @@ const getPosition = (opts) => {
 // async / await does NOT transform the way JS executes
 // it would still execute the same way when we would use a normal Promise instance
 async function trackUserHandler() { // with async added, the function now automatically returns a Promise
-  // waits for this Promise to resolve, only then will the next line execute
-  // also returns what the Promise resolves
-  const posData = await getPosition(); // we do NOT block code execution with async / await
-  const timerData = await setTimer(2000);
-
-  console.log(timerData, posData);
+    let posData;
+    let timerData;
+    try {
+        // waits for this Promise to resolve, only then will the next line execute
+        // also returns what the Promise resolves
+        posData = await getPosition(); // we do NOT block code execution with async / await
+        timerData = await setTimer(2000);
+    } catch(error) {
+        console.log(error);
+    }
+    console.log(timerData, posData); // this line will always run after try-catch
 }
 
 button.addEventListener('click', trackUserHandler); 
