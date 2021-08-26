@@ -1,0 +1,5 @@
+JS is single-threaded.
+
+JS can only execute one task at a time.
+
+Code executes step by step, in order.
