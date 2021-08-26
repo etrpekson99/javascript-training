@@ -52,3 +52,30 @@ button.addEventListener('click', trackUserHandler);
 // and don't want to execute things one after the other
 
 // async / await is only available in functions
+
+// ------------------------------------------------------------------------------------------------------------------------
+
+// execute the one that is faster
+Promise.race([ // all promises are executed at the same time
+    getPosition(),
+    setTimer(1000)
+]).then((data) => {
+    console.log(data);
+}); // returns a Promise with the result of the FASTEST promise we pass to it
+
+// only execute after a couple of Promises have finished
+// if one of the Promises fail, this is canceled
+// it's either ALL resolved or ONE rejected
+Promise.all([
+    getPosition(),
+    setTimer(1000),
+]).then(promiseData => {
+    console.log({ promiseData }); // [Position, "done!"]
+}); // the data we get as a result will be the COMBINED resolved data of all our other Promises
+
+Promise.allSettled([
+    getPosition(),
+    setTimer(1000),
+]).then(promiseData => {
+    console.log({ promiseData }); // we can see which Promise fails and which one succeeded
+}); // returns the different outputs of all the settled promises, whether it's resolved or rejected
