@@ -1,6 +1,8 @@
 The browser takes care of async code JS passes to it
 and manages them in multiple threads.
 
+"JS is single-threaded but offloads longer-taking tasks to the browser which is multi-threaded"
+
 callback() functions are the functions called by the browser
 once it is done executing the asynchronous code, allowing us
 to "step back" into our script.
