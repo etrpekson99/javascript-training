@@ -1,0 +1,5 @@
+Callback hell
+- callbacks stacked on callbacks
+
+Promises
+- allow us to write cleaner code, instead of nesting multiple callbacks
