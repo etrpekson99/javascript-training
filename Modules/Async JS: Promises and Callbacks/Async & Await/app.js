@@ -37,6 +37,18 @@ async function trackUserHandler() { // with async added, the function now automa
         console.log(error);
     }
     console.log(timerData, posData); // this line will always run after try-catch
+
+    // these two are not immediately executed because behind the scenes,
+    // these have their own "then" blocks as well
+    setTimer(1000).then(() => {
+        console.log('timer done!');
+    });
+    console.log('getting position');
 }
 
 button.addEventListener('click', trackUserHandler); 
+
+// one disadvantage of async / await is that we can't run tasks simultaneously inside of the same function
+// and don't want to execute things one after the other
+
+// async / await is only available in functions
