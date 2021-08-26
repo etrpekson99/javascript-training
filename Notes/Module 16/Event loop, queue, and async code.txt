@@ -1,0 +1,12 @@
+Event loop
+- helps us deal with async code and callback functions
+- built into the browser and in other JS host environments
+- its job is to synchronize the call stack in the engine
+  with our waiting messages in our message queue
+- it checks if the stack is empty, then it pushes any waiting
+  "to-do" functions into the call stack
+
+message queue
+- in here, the browser registers any code once there is time
+  for it
+- tasks in here are "to-do"
