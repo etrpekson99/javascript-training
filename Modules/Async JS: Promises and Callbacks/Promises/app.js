@@ -41,6 +41,11 @@ function trackUserHandler() {
   .catch(err => {
     console.log(err);
     return 'continue';
+    })
+    .finally(() => {
+        // the promise is settled now - finally() will NOT return a new promise!
+        // this is where we can do some cleanup code
+        positionData = null;
     });
   setTimer(1000).then(() => {
       console.log('timer done!');
