@@ -1,0 +1,5 @@
+Rendered HTML should not directly interact with the backend server (API)
+
+JS allows us to send requests that are correctly configure\
+and hold all the data the server wants to our API endpoints
+without refreshing the page, which can cause some bad UX.
