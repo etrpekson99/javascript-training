@@ -1,0 +1,20 @@
+Server
+- may run on different server (different domain)
+- responsible for storing and retrieving data (with database)
+
+Frontend
+- detached from backend
+- on the FE, we do not connect directly to a database
+
+The communication between Server and Frontend happen with
+HTTP Requests / Responses
+- these requests / responses have to be configured in a certain way
+- when we send a request, it needs to know the URL (domain + path)
+  URL: my-page.com/posts
+  Domain: my-page.com
+  Path: /posts
+- each request has a method assigned to it; they describe what we
+  want to do, but the server is still responsible for doing what it
+  needs to do. It is also the job of the server to decide which
+  methods will be supported for the FE to use
+- 
