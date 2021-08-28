@@ -17,4 +17,5 @@ HTTP Requests / Responses
   want to do, but the server is still responsible for doing what it
   needs to do. It is also the job of the server to decide which
   methods will be supported for the FE to use
-- 
+- HTTP headers are extra metadata that can be attached to requests
+- some requests require an HTTP body (data)
