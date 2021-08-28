@@ -1,0 +1,7 @@
+Error handling can be clunky in the fetch() API
+
+We can hide the error handling in the fetch() API in a custom function
+so that it would be cleaner when we use it.
+
+XMLHTTPRequest has better support for browsers outside of the box,
+and error handling is a bit more straightforward.
