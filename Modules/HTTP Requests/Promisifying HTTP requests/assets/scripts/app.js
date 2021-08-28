@@ -1,5 +1,7 @@
 const listElement = document.querySelector('.posts');
 const postTemplate = document.getElementById('single-post');
+const form = document.querySelector('#new-post form');
+const fetchButton = document.querySelector('#available-posts button');
 
 const sendHttpRequest = (method, url, data) => {
     const promise = new Promise((resolve, reject) => {
@@ -42,5 +44,13 @@ const createPost = async (title, content) => {
     sendHttpRequest('POST', 'https://jsonplaceholder.typicode.com/posts', post);
 }
 
-fetchPosts();
-createPost('DUMMY', 'A dummy post!');
+// this fetch button always appends new data without clearing the existing data first
+// that means pressing the button multiple times will add more and more items
+fetchButton.addEventListener('click', fetchPosts);
+
+form.addEventListener('submit', event => {
+    event.preventDefault();
+    const enteredTitle = event.currentTarget.querySelector('#title').value;
+    const enteredContent = event.currentTarget.querySelector('#content').value;
+    createPost(enteredTitle, enteredContent);
+})
