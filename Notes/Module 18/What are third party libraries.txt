@@ -1,0 +1,10 @@
+What is a third-party library?
+- does not matter whether we're working with
+  JS in the browser or in a different environment
+  like NodeJS
+- helps us with utility functions that we don't have
+  to write on our own anymore
+- packages of code and functions written in JS that can
+  be used in our own code
+- takes away some of the complexity from our core project
+  or core business logic
