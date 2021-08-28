@@ -13,7 +13,19 @@ const sendHttpRequest = (method, url, data) => {
         xhr.responseType = 'json';
 
         xhr.onload = () => {
-            resolve(xhr.response);
+            if (xhr.status >= 200 && xhr.status < 300) {
+                resolve(xhr.response);
+            } else {
+                reject(new Error('Something went wrong'));
+            }
+        }
+
+        // this error function will kick in when we have a network error
+        // if we have a request that leaves our page successfully, and
+        // we get back a response, even if that response returns an error,
+        // then we are not making it into onerror, but instead to onload
+        xhr.onerror = () => {
+            reject(new Error('Failed to send request!'));
         }
 
         xhr.send(JSON.stringify(data));
@@ -23,14 +35,18 @@ const sendHttpRequest = (method, url, data) => {
 }
 
 const fetchPosts = async () => {
-    const posts = await sendHttpRequest('GET', 'https://jsonplaceholder.typicode.com/posts');
+    try {
+        const posts = await sendHttpRequest('GET', 'https://jsonplaceholder.typicode.com/posts');
 
-    for (post of posts) {
-        const postEl = document.importNode(postTemplate.content, true);
-        postEl.querySelector('h2').textContent = post.title;
-        postEl.querySelector('p').textContent = post.body;
-        postEl.querySelector('li').id = post.id;
-        listElement.append(postEl);
+        for (post of posts) {
+            const postEl = document.importNode(postTemplate.content, true);
+            postEl.querySelector('h2').textContent = post.title;
+            postEl.querySelector('p').textContent = post.body;
+            postEl.querySelector('li').id = post.id;
+            listElement.append(postEl);
+        }
+    } catch (error) {
+        console.log(error.message);
     }
 }
 
