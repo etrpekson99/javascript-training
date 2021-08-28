@@ -1,0 +1,4 @@
+FormData is a special type of data we can send in our requests
+- we can easily add files to our requests
+- we can use this to automatically parse a form
+- not all APIs support FormData

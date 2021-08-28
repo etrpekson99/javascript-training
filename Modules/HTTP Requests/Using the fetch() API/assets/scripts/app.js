@@ -10,10 +10,11 @@ const sendHttpRequest = (method, url, data) => {
     // fetch does not give us the parsed response, but a streamed response
     return fetch(url, {
             method,
-            body: JSON.stringify(data),
-            headers: {
-                'Content-Type': 'application/json'
-            }
+            body: data,
+            // body: JSON.stringify(data),
+            // headers: {
+            //     'Content-Type': 'application/json'
+            // }
         })
         .then(async response => {
             // parses the body of the response and transforms it to JS objects and arrays
@@ -21,6 +22,7 @@ const sendHttpRequest = (method, url, data) => {
                 return response.json(); 
             } else {
                 return response.json().then(errorData => {
+                    console.log({ errorData });
                     throw new Error('Something went wrong - server-side');
                 });
             }
@@ -55,7 +57,15 @@ const createPost = async (title, content) => {
         userId,
     };
 
-    sendHttpRequest('POST', 'https://jsonplaceholder.typicode.com/posts', post);
+    // pass the form element at the document and JS will automatically collect the form data that's
+    // been inputted by the user.
+    // we do, however have to make sure we add a "name" attribute to our HTML input elements
+    const fd = new FormData(form); 
+    // fd.append('title', title);
+    // fd.append('body', content);
+    fd.append('userId', userId);
+
+    sendHttpRequest('POST', 'https://jsonplaceholder.typicode.com/posts', fd);
 }
 
 fetchButton.addEventListener('click', fetchPosts);
