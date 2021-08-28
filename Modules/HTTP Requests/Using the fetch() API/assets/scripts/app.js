@@ -15,9 +15,19 @@ const sendHttpRequest = (method, url, data) => {
                 'Content-Type': 'application/json'
             }
         })
-        .then(response => {
+        .then(async response => {
             // parses the body of the response and transforms it to JS objects and arrays
-            return response.json(); 
+            if (response.status >= 200 && response.status < 300) {
+                return response.json(); 
+            } else {
+                return response.json().then(errorData => {
+                    throw new Error('Something went wrong - server-side');
+                });
+            }
+        })
+        .catch(error => { // only network and connectivity issues will be caught here
+            console.log(error);
+            throw new Error('Something went wrong');
         });
 }
 
