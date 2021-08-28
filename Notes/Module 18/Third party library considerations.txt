@@ -1,0 +1,10 @@
+Some things we should keep in mind when working with libraries:
+- when we add a library, we include all of its functions,
+  including ones that we will never use. we download more
+  than we need
+- we want to make sure we're working with libraries that are
+  secure and ACTIVELY MAINTAINED
+- we don't want to add a package that adds a security hole
+- we want to make sure there's ACTIVE support for the library,
+  so we can easily find help when we encounter bugs that's
+  related to the library
