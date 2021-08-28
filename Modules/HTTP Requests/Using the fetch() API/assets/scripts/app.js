@@ -11,6 +11,9 @@ const sendHttpRequest = (method, url, data) => {
     return fetch(url, {
             method,
             body: JSON.stringify(data),
+            headers: {
+                'Content-Type': 'application/json'
+            }
         })
         .then(response => {
             // parses the body of the response and transforms it to JS objects and arrays
