@@ -8,10 +8,14 @@ const sendHttpRequest = (method, url, data) => {
     // if we just pass a URL to fetch, it will send a GET method
     // fetch returns a promise
     // fetch does not give us the parsed response, but a streamed response
-    return fetch(url).then(response => {
-        // parses the body of the response and transforms it to JS objects and arrays
-        return response.json(); 
-    });
+    return fetch(url, {
+            method,
+            body: JSON.stringify(data),
+        })
+        .then(response => {
+            // parses the body of the response and transforms it to JS objects and arrays
+            return response.json(); 
+        });
 }
 
 const fetchPosts = async () => {
