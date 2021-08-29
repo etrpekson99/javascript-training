@@ -1,5 +1,6 @@
-import { ProjectItem } from './ProjectItem.js';
-import { DOMHelper } from '../Utility/DOMHelper.js';
+import { ProjectItem as ProjItem } from './ProjectItem.js';
+// import { moveElement } from '../Utility/DOMHelper.js';
+import * as DOMHelp from '../Utility/DOMHelper.js'; // bundle everything in one object (DOMHelp)
 
 export class ProjectList {
     projects = [];
@@ -9,7 +10,7 @@ export class ProjectList {
       const prjItems = document.querySelectorAll(`#${type}-projects li`);
       for (const prjItem of prjItems) {
         this.projects.push(
-          new ProjectItem(prjItem.id, this.switchProject.bind(this), this.type)
+          new ProjItem(prjItem.id, this.switchProject.bind(this), this.type)
         );
       }
       console.log(this.projects);
@@ -57,9 +58,10 @@ export class ProjectList {
     }
   
     addProject(project) {
-      this.projects.push(project);
-      DOMHelper.moveElement(project.id, `#${this.type}-projects ul`);
-      project.update(this.switchProject.bind(this), this.type);
+        this.projects.push(project);
+    //   moveElement(project.id, `#${this.type}-projects ul`);
+        DOMHelp.moveElement(project.id, `#${this.type}-projects ul`);
+        project.update(this.switchProject.bind(this), this.type);
     }
   
     switchProject(projectId) {
