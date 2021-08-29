@@ -1,5 +1,8 @@
 import { ProjectList } from './App/ProjectList.js'
 
+window.DEFAULT_VALUE = 'MEOW'; // use this as a last resort when we have to share data among modules
+globalThis.DEFAULT_VALUE = 'BARK';
+
 class App {
   static init() {
     const activeProjectsList = new ProjectList('active');

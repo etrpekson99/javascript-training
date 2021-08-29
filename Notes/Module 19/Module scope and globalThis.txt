@@ -1,0 +1,8 @@
+The global object is, by default, no longer easily
+accessible when we utilize modular JS.
+
+Modules have their own scrop, and "this" does
+not refer to the window object anymore within modules.
+
+globalThis in modules replaces "this" as our pointer to
+the window object.
