@@ -1,4 +1,8 @@
-export class Component {
+export function doSomething() {
+    console.log('something');
+}
+
+export default class {
     constructor(hostElementId, insertBefore = false) {
       if (hostElementId) {
         this.hostElement = document.getElementById(hostElementId);
