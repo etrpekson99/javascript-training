@@ -9,6 +9,12 @@ Browsers store temporary, "convenience" data
   - manage user preferences or basic user data
   - can be cleared by the user and via JS
   - easy to use, quite versatile, but bad for complex data
+  - we should never treat these storages as the single source of truth
+  - we can't rely on data to persist in localStorage because users can delete
+    them and browsers can delete them if they run out of disk space
+  - sessionStorage data lives us long as our page is OPEN in the browser,
+    as long as we have it in an active tab, even if we reload the page
+  - localStorage isn't cleared unless the user clears it manually
 - Cookies
   - simple key-value store that can be configured in various ways
   - manage user preferences or basic user data
