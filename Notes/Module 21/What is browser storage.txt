@@ -1,0 +1,24 @@
+The server and the browser are the two entities communicating
+when we have a webpage.
+
+Servers store essential and persistent data, like emails and passwords
+
+Browsers store temporary, "convenience" data
+- localStorage & sessionStorage
+  - simple key-value store, like a JS object with key-value pairs
+  - manage user preferences or basic user data
+  - can be cleared by the user and via JS
+  - easy to use, quite versatile, but bad for complex data
+- Cookies
+  - simple key-value store that can be configured in various ways
+  - manage user preferences or basic user data
+  - can be cleared by the user and via JS
+  - a bit clunky to use, quite versatile
+  - sent to the server with outgoing HTTP requests
+  - bad for complex data
+- IndexedDB
+  - relatively sophisticated, client-side database
+  - manage complex data your web app needs
+  - can be cleared by the user and via JS
+  - a bit clunky to use
+  - good performance
