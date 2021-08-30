@@ -1,0 +1,11 @@
+For Production (upon code)
+1. Linting (ESLint)
+2. Bundling (Webpack)
+3. Compilation (Babel)
+4. Optimization
+5. Production-ready code
+
+During development (upon "save)
+1. Linting (ESLint)
+2. Bundling (Webpack)
+3. Reload dev server
