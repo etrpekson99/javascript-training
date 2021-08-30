@@ -9,6 +9,7 @@
   "author": "Elijah Pekson",
   "license": "ISC",
   "devDependencies": {
+    "@babel/eslint-parser": "^7.15.0",
     "eslint": "^7.32.0"
   }
 }
