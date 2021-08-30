@@ -1,10 +1,11 @@
 const path = require('path');
+const CleanPlugin = require('clean-webpack-plugin');
 
 module.exports = {
     mode: 'production',
     entry: './src/app.js',
     output: {
-        filename: 'app.js',
+        filename: '[contenthash].js', // tells webpack that a hash should be generated when a file changed
         path: path.resolve(__dirname, 'assets', 'scripts'),
         publicPath: 'assets/scripts/'
     },
@@ -14,4 +15,7 @@ module.exports = {
         },
     },
     devtool: 'cheap-source-map',
+    plugins: [
+        new CleanPlugin.CleanWebpackPlugin(),
+    ],
 };
