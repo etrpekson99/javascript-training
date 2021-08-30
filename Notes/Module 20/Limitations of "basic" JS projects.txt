@@ -1,0 +1,22 @@
+- Micromanagement of imports or lots of unnecessary HTTP requests
+- unoptimzed code (not as small as possible)
+- potentially sub-optimal browser support
+- need to reload page manually (after changes to code)
+- code quality is not checked
+
+Helpful tools and why to use them
+- webpack-dev-server
+  - a development server
+  - server under (more) realistic circumstances, auto-reload
+- webpack
+  - a bundling tool
+  - combine multiple files into bundled code (less files)
+- webpack optimizer
+  - code optimizatioon tool
+  - optimize code (shorten function names, remove whitespace, etc..)
+- Babel
+  - code compilation tool
+  - write modern code, get "older" code as output
+- ESLint
+  - code quality checker
+  - check code quality, check for conventions and patterns
