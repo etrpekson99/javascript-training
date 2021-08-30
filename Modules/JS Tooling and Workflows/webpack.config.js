@@ -9,5 +9,11 @@ module.exports = {
         path: path.resolve(__dirname, 'assets', 'scripts'),
         // tell webpack that our files are stored in a different path
         publicPath: 'assets/scripts/'
+    },
+    devServer: {
+        static: {
+            // tell webpack where our page is being served from
+            directory: path.resolve(__dirname),
+        },
     }
 };
