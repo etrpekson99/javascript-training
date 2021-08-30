@@ -4,6 +4,7 @@ when we have a webpage.
 Servers store essential and persistent data, like emails and passwords
 
 Browsers store temporary, "convenience" data
+
 - localStorage & sessionStorage
   - simple key-value store, like a JS object with key-value pairs
   - manage user preferences or basic user data
@@ -15,6 +16,7 @@ Browsers store temporary, "convenience" data
   - sessionStorage data lives us long as our page is OPEN in the browser,
     as long as we have it in an active tab, even if we reload the page
   - localStorage isn't cleared unless the user clears it manually
+
 - Cookies
   - simple key-value store that can be configured in various ways
   - manage user preferences or basic user data
@@ -22,6 +24,11 @@ Browsers store temporary, "convenience" data
   - a bit clunky to use, quite versatile
   - sent to the server with outgoing HTTP requests
   - bad for complex data
+  - cookies are really only available if our webpage is getting
+    served with a real server
+  - if a cookie has an HttpOnly flag, it's not accessible by
+    browser-side JS and only accessible in the server
+
 - IndexedDB
   - relatively sophisticated, client-side database
   - manage complex data your web app needs
