@@ -33,8 +33,11 @@ Browsers store temporary, "convenience" data
     session expires
 
 - IndexedDB
+  - in-browser DB
   - relatively sophisticated, client-side database
   - manage complex data your web app needs
   - can be cleared by the user and via JS
   - a bit clunky to use
   - good performance
+  - works with object stores
+  - critical data should not be stored here
