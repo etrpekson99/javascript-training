@@ -1,0 +1,7 @@
+Webpack
+- bundling tool
+- helps us orchestrate our entire build workflow
+- needs to know where the entrypoint of our project is
+- it analyzes the entrypoint file along with all the imports
+  of that filea nd then resolves all the dependencies of that
+  file and the files related to that file (imports)
