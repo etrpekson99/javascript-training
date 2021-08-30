@@ -15,5 +15,7 @@ module.exports = {
             // tell webpack where our page is being served from
             directory: path.resolve(__dirname),
         },
-    }
+    },
+    // how webpack links our file to the original code
+    devtool: 'cheap-module-eval-source-map', // this allows us to better debug our code
 };
