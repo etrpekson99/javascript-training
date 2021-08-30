@@ -1,6 +1,9 @@
+import { difference } from 'lodash';
 import { ProjectList } from './App/ProjectList.js';
 
 globalThis.DEFAULT_VALUE = 'MAX';
+
+console.log(difference([0, 2], [1, 2]));
 
 class App {
   static init() {

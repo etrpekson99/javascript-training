@@ -19,7 +19,7 @@ module.exports = {
     },
     // how webpack links our file to the original code
     devtool: 'cheap-module-eval-source-map', // this allows us to better debug our code
-    plugins: [
-        new CleanPlugin.CleanWebpackPlugin(),
-    ],
+    // plugins: [
+    //     new CleanPlugin.CleanWebpackPlugin(),
+    // ],
 };
