@@ -28,6 +28,9 @@ Browsers store temporary, "convenience" data
     served with a real server
   - if a cookie has an HttpOnly flag, it's not accessible by
     browser-side JS and only accessible in the server
+  - retrieval is all or nothing, unlike in local and session storage
+  - if we don't set an expiration date on a cookie, it expires when our
+    session expires
 
 - IndexedDB
   - relatively sophisticated, client-side database

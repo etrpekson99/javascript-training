@@ -5,10 +5,22 @@ const retrieveBtn = document.getElementById('retrieve-btn');
 
 storeBtn.addEventListener('click', () => {
     const userId = 'u123';
+    const user = {
+        name: 'Eli',
+        age: 23,
+    }
     // add a new entry to the cookie, not overried the existing data
-    document.cookie = `uid=${userId}`; 
+    // 
+    document.cookie = `uid=${userId}; max-age=360`; 
+    // document.cookie = `uid=${userId}; expires=${data}`; 
+    document.cookie = `user=${JSON.stringify(user)}`; 
 });
 
 retrieveBtn.addEventListener('click', () => {
-   console.log(document.cookie);
+    const cookieData = document.cookie.split(';');
+    const data = cookieData.map(i => {
+        return i.trim();
+    });
+    console.log(data);
+    
 });
