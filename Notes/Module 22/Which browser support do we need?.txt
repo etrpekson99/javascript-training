@@ -1,0 +1,17 @@
+Naive thought: support ALL browsers and ALL browser versions
+- DON'T DO THIS
+
+There are super older versions of IE that don't support ANYTHING
+
+Don't build an application for the smallest possible denomenator
+
+Analyze your market. Who will be your users?
+
+For example, we are building an internal tool / app:
+- company browser might be clearly defined
+
+For tech-savvy users:
+- very likely to use cutting-edge browsers and versions
+
+Older people, non-tech-savvy audience
+- likely to use older browsers
