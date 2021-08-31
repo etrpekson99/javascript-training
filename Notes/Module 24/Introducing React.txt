@@ -1,0 +1,12 @@
+The idea behind React.js
+
+A JS library for building user-interfaces
+
+It started a hige ecosystem, effectively forming a pseudo-framework
+
+Uses a declarative approach:
+we define the result, not the steps that lead to the result
+
+Opposite of that is an imperative approach, where we define all the steps to achieve the result
+
+We define components (JS functions or classes) and build our UI with these components
