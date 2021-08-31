@@ -31,7 +31,16 @@ Write modern code, user cutting-edge features -> Ship (deploy) cross-browser cod
 
 npm i --save-dev babel-loader @babel/core @babel/preset-env
 
-browserList is a configuration that allows us to set which browsers we will support
+browsersList is a configuration that allows us to set which browsers we will support
 and will transpile our code to
 
 resource: https://github.com/browserslist/browserslist#full-list
+
+------------------------------------------------------------------------
+
+Improvement: automatically detect + add polyfills
+
+corejs is a package with all polyfills
+
+useBuiltIns: 'entry' would load all polyfills that we need to meet
+the specification we put in the browsersList configuration

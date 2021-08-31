@@ -20,7 +20,19 @@ module.exports = {
           loader: 'babel-loader',
           options: {
             presets: [
-              ['@babel/preset-env', { targets: "defaults" }]
+              [
+                '@babel/preset-env', 
+                {
+                  targets: "defaults",
+                  // with useBuiltIns, we manually have to add polyfill imports and babel will replace it with the actual polyfills we need
+                  useBuiltIns: 'entry',
+                  // with usage, babel will add polyfills entries as it detects them, so it basically checks which features we use and add imports accordingly
+                  // useBuiltIns: 'usage',
+                  corejs: {
+                    version: 3, // tell babel which version of corejs we are using
+                  }
+                }
+              ]
             ]
           }
         }
