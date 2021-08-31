@@ -42,3 +42,4 @@ Browsers store temporary, "convenience" data
   - works with object stores
   - critical data should not be stored here
   - idb.js is a useful library that helps us work with IndexedDB
+  - this does NOT replace a database and storing data on a server
