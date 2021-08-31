@@ -7,9 +7,13 @@
     <title>Project Board</title>
     <link rel="stylesheet" href="assets/styles/app.css" />
     <script src="assets/scripts/app.js" defer></script>
+    <scrip nomodule></scrip> <!-- this script can hold any fallback code that we want to use in any browser that doesn't support modules -->
   </head>
   <body>
    <button>COPY</button>
    <p>Some text you could copy...</p>
+   <noscript> <!-- for users that have JS disabled -->
+     please enable JS to use this page 
+   </noscript>
   </body>
 </html>
