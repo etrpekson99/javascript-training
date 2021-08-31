@@ -44,3 +44,9 @@ corejs is a package with all polyfills
 
 useBuiltIns: 'entry' would load all polyfills that we need to meet
 the specification we put in the browsersList configuration
+
+What about non-browser environments like NodeJS?
+
+We control which version of JS / NodeJS we use
+
+If a feature is available, you can use it.
