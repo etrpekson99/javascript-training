@@ -25,9 +25,9 @@ module.exports = {
                 {
                   targets: "defaults",
                   // with useBuiltIns, we manually have to add polyfill imports and babel will replace it with the actual polyfills we need
-                  useBuiltIns: 'entry',
+                  // useBuiltIns: 'entry',
                   // with usage, babel will add polyfills entries as it detects them, so it basically checks which features we use and add imports accordingly
-                  // useBuiltIns: 'usage',
+                  useBuiltIns: 'usage',
                   corejs: {
                     version: 3, // tell babel which version of corejs we are using
                   }
