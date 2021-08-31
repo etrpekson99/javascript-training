@@ -10,9 +10,6 @@ module.exports = {
     publicPath: 'assets/scripts/'
   },
   devtool: 'cheap-source-map',
-  // devServer: {
-  //   contentBase: './'
-  // }
   module: {
     rules: [
       {

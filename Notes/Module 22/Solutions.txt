@@ -15,3 +15,23 @@ A polyfill "teaches" the browser how to use the feature
 
 This is only possible possible for some features (i.e where
 you can re-create the missing functionality)
+
+------------------------------------------------------------------------
+
+Solution: Using transpilation
+
+Typical for features like let, const, async/await, arrow functions, etc.
+
+Convert ("transpile") modern code to "older" code
+
+Third-party tools like Babel convert your code to code that works in older
+browsers as well
+
+Write modern code, user cutting-edge features -> Ship (deploy) cross-browser code
+
+npm i --save-dev babel-loader @babel/core @babel/preset-env
+
+browserList is a configuration that allows us to set which browsers we will support
+and will transpile our code to
+
+resource: https://github.com/browserslist/browserslist#full-list
