@@ -1,0 +1,27 @@
+What is a framework?
+
+JS Libraries
+- (third-party) package that add functionalities
+- typically focused on one or a few core tasks
+
+JS Frameworks
+- (third-party) packages that add functionalities and rules
+- forces us to have a certain rule set
+- often make it easier for us to build our app and spend less
+  time focusing on smaller details
+
+Famous JS Frameworks:
+
+Angular
+- uses TypeScript - a superset of JS (TS is a stand-alone project from Angular)
+- very popular, contains loads of features
+
+Vue
+- uses regular JS
+- easy to learn, popular, contains all important features
+- has more built-in features than React
+
+React
+- a rich JS library that can almost be considered a framework
+- uses "enhanced" JS syntax with JSX
+- also very popular, spawned huge ecosystem
