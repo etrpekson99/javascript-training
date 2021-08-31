@@ -1,0 +1,5 @@
+For example, the navigator.clipboard API
+
+Check if feature is available, execute the code and use feature.
+
+If not available, execute fallback code, show error message.
