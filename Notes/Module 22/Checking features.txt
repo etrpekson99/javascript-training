@@ -1,0 +1,20 @@
+Is a feature available?
+
+There is a core feature that's available in most browsers.
+
+Resources:
+- MDN
+  - check feature article - browser support table at the bottom
+  - also often includes, notes, fallbacks, workarounds, etc.
+- caniuse.com
+  - search for feature name to get a detailed overview table
+    (including browser market shares)
+  - shows us how many possible users will be able to or won't be
+    able to use our app in case it has a certain feature
+- Google
+  - for niche features and advanced use cases
+  - for more complex issues, Stackoverflow discussions can be helpful
+- ES6 / Compat table
+  - for next-gen JS syntax features
+  - provides detailed feature split and also includes support of transpilers,
+    compilers, polyfills, server/runtimes, and mobile
