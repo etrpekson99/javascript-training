@@ -1,0 +1,25 @@
+What exactly is browser support?
+
+We, the developers, want to use latest JS features like fetch()
+We can't control which browser your users use
+
+There's a broad variety of browsers that users can user
+
+Browser features vs JS syntax
+- they are related but not exactly the same
+
+Browser features (Browser APIs)
+- the browser "decides" which features it offers
+- examples: fetch(), geolocation, DOM API, etc.
+- implemented individually
+
+JS Syntax
+- the browser's JS engine defines which JS syntax/version is supported
+- examples: let, const, async/await, Promises, etc.
+- implemented individually or in chunks (e.g. ES6)
+- there is a way of writing code in the latest JS syntax and compiling it
+  to older JS so that other browsers may support it; for DOM APIs,
+  that's not really possible
+
+Not all browsers support all features, and support changes all the time in modern ("evergreen")
+browsers. Legacy browsers (e.g. IE8) do not receive new features anymore.
