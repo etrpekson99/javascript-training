@@ -4,8 +4,13 @@ Symbols
 - built-in and creatable by developers
 - uniqueness is guaranteed
 
-Iterators and Generators
--
+Iterators
+- an Iterator is an object which has a "next" method that returns a result
+  of a certain structure
+- iterators allow us to loop through any field in an object
+
+Generators
+- builds us an iterator object (one with a next() method built in)
 
 Reflect API
 -

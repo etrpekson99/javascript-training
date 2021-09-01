@@ -28,6 +28,7 @@ console.log(Symbol('uid') === Symbol('uid')); // false
 console.log(user.toString()); // [object User]
 
 // ----------------------------------------------------------------
+
 // iterators
 
 const company = {
@@ -40,6 +41,21 @@ const company = {
         const returnValue = { value: this.employees[this.currEmployee], done: false };
         this.currEmployee++;
         return returnValue;
+    },
+    // JS is not looking for a next method when we run a for-of loop
+    // instead what it is looking for is a special Symbol
+    // * turns the function into a generator
+    [Symbol.iterator]: function* employeeGenerator() {
+        let currentEmployee = 0;
+        while(currentEmployee < this.employees.length) {
+            // yield is a bit like return
+            // yield defines the return value of every call to the next() method
+            // that is created in the iterator that's a result of this generator function
+            // yield saves the current state of execution, and then the next time the "next"
+            // method is called, it "remembers" the previous state and iterates accordingly
+            yield this.employees[currentEmployee];
+            currentEmployee++;
+        }
     }
 };
 
@@ -56,3 +72,16 @@ while(!employee.done) {
     console.log(employee.value);
     employee = company.next();
 }
+
+// ----------------------------------------------------------------
+
+// generators and iterable objects
+
+// executes the function is finds in Symbol.iterator
+// JS executes the next method that's been created using the generator
+// as long as it isn't "done" yet
+for (const employee of company) {
+    console.log(employee);
+}
+
+console.log([...company]);
