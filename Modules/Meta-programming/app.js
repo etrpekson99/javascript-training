@@ -10,6 +10,7 @@ const user = {
     [uid]: 'p1', // the user cannot tamper with this property
     name: 'Elijah',
     age: 23,
+    [Symbol.toStringTag]: 'User', 
 }
 
 // using the library
@@ -20,3 +21,8 @@ user.id = 'p2'; // ensure this isn't possible
 console.log(user);
 console.log(user[Symbol('uid')]); // will output undefined
 console.log(Symbol('uid') === Symbol('uid')); // false
+
+// ----------------------------------------------------------------
+
+// (some) well-known symbols
+console.log(user.toString()); // [object User]
