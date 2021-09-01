@@ -1,0 +1,14 @@
+Symbols
+- primitive values
+- used as object property identifiers (keys)
+- built-in and creatable by developers
+- uniqueness is guaranteed
+
+Iterators and Generators
+-
+
+Reflect API
+-
+
+Proxy API
+-
