@@ -85,3 +85,7 @@ for (const employee of company) {
 }
 
 console.log([...company]);
+
+const persons = ['Elijah', 'Hannah'];
+// this array uses the same logic basically as the one we built above
+console.log(persons); // Symbol.iterator will be found in the prototype
