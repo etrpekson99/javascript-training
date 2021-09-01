@@ -89,3 +89,19 @@ console.log([...company]);
 const persons = ['Elijah', 'Hannah'];
 // this array uses the same logic basically as the one we built above
 console.log(persons); // Symbol.iterator will be found in the prototype
+
+// ----------------------------------------------------------------
+
+// the Reflect API
+
+const course = {
+    title: 'JS',
+};
+
+Reflect.setPrototypeOf(course, { 
+    toString() { return this.title }
+});
+Reflect.defineProperty(course, 'price', { value: 1.99 });
+
+console.log(course.toString());
+console.log(course);
