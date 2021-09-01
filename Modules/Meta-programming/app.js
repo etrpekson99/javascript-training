@@ -105,3 +105,19 @@ Reflect.defineProperty(course, 'price', { value: 1.99 });
 
 console.log(course.toString());
 console.log(course);
+
+// ----------------------------------------------------------------
+
+// the Proxy API
+const courseHandler = {
+    get(obj, propertyName) { // executed when someone tries to get the value of a property from the course object
+        if (propertyName === 'length') {
+            return 0;
+        }
+        return obj[propertyName] || 'not found';
+        // return 'wow'; // override what we fetch here, but we do not mutate the object
+    }
+};
+
+const pCourse = new Proxy(course, courseHandler);
+console.log(pCourse.title, pCourse.length, pCourse.rating); // JS, 0, not found
