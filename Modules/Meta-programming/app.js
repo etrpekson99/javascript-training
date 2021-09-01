@@ -121,3 +121,24 @@ const courseHandler = {
 
 const pCourse = new Proxy(course, courseHandler);
 console.log(pCourse.title, pCourse.length, pCourse.rating); // JS, 0, not found
+
+// ----------------------------------------------------------------
+
+// working with Proxy traps
+// traps are not bound to any specific property name, and are very generic and flexible
+const courseHandler2 = {
+    get(obj, propetyName) {
+        return obj[propertyName] || 'not found';
+    },
+    set(obj, propertyName, newValue) {
+        if (propertyName === 'rating') {
+            return;
+        }
+        obj[propertyName] = newValue; // does the default thing
+    }
+};
+
+const pCourse2 = new Proxy(course, courseHandler2);
+pCourse2.rating = 5;
+
+console.log(pCourse2);
