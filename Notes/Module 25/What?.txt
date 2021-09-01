@@ -12,7 +12,13 @@ Iterators & Generators
 - a Generator builds us an iterator object (one with a next() method built in)
 
 Reflect API
--
+- API that allows us to control objects
+- added recently with ES6
+- has two advantages over the Object API:
+  - returns a better error or true or false if the method worked
+  - it bundles all features that we need to work with objects, for
+    example the deleteProperty method which is not available in the
+    Object API
 
 Proxy API
 -
