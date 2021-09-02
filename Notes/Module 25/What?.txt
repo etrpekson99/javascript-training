@@ -12,6 +12,8 @@ Iterators & Generators
 - a Generator builds us an iterator object (one with a next() method built in)
 
 Reflect API
+- standardized and grouped methods
+- control code usage / impact
 - API that allows us to control objects
 - added recently with ES6
 - has two advantages over the Object API:
@@ -21,4 +23,5 @@ Reflect API
     Object API
 
 Proxy API
--
+- create "traps" for object operations
+- step in and execute code
