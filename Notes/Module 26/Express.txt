@@ -8,4 +8,4 @@ Each function can stop the request and send back a response,
 at which point the request will not reach any other function
 or any other middleware.
 
-Or a function can forward a request to the next function
+Or a function can forward a request to the next function.
