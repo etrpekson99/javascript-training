@@ -2,3 +2,5 @@ node appname.js -> run a JS file
 
 NodeJS works with modules
 In Node, we use the require syntax for importing libraries
+
+Other modules are available globally like setTimeout

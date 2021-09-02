@@ -1,0 +1,7 @@
+More commonly, we use NodeJS to listen to incoming requests
+
+As long as NodeJS notices ongoing event listeners, it does
+not shut down script execution.
+
+We want our server to keep running
+

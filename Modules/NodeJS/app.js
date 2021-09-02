@@ -1,26 +1,9 @@
-const fs = require('fs');
+const http = require('http');
 
-const userName = 'Eli';
-
-console.log(`hi ${userName}`);
-
-// document.querySelector('div'); // this will not work in node
-
-// ----------------------------------------------------------------------------
-
-// modules and file access
-fs.writeFile('user-data.txt', 'username=Elijah', err => {
-    if (err) {
-        console.log(err);
-    } else {
-        console.log('wrote to file');
-    }
+// creates an http server
+const server = http.createServer((request, response) => { // this function triggers for every incoming request
+    response.write('hello there!');
+    response.end(); // we are done adding data to the response
 });
 
-fs.readFile('user-data.txt', (err, data) => {
-    if (err) {
-        console.log(err);
-        return;
-    }
-    console.log(data.toString());
-})
+server.listen(3000); // listen starts the server and listens to incoming requests
