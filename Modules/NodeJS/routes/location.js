@@ -27,8 +27,22 @@ router.post('/add-location', (req, res, next) => {
     });
 });
 
-router.get('/location', (req, res, next) => {
+router.get('/location/:locationId', (req, res, next) => {
+    const locationId = +req.params.locationId;
+    const location = locationStorage.locations.find(loc => {
+        return loc.id === locationId;
+    });
 
+    if (!location) {
+        res.status(404).json({ // return an error response to the FE
+            message: 'not found',
+        });
+    }
+
+    res.json({
+        address: location.address,
+        coordinates: location.coordinates,
+    });
 });
 
 module.exports = router;
