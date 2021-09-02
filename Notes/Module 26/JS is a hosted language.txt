@@ -1,0 +1,7 @@
+JS can be implemented in different environments,
+all we need is a JS engine that parses the code.
+
+NodeJS
+- extracted V8 JS engine, enriched by extra APIs
+- instead of browser APIs, it has access to other APIs
+  outside of the browser
