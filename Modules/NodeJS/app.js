@@ -4,6 +4,9 @@ const bodyParser = require('body-parser');
 // setup express
 const app = express();
 
+app.set('view engine', 'ejs');
+app.set('views', 'views');
+
 // register a middleware
 // order does matter
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -15,13 +18,9 @@ app.use((req, res, next) => {
 
 app.use((req, res, next) => {
     const userName= req.body.username || 'unknown user';
-    res.send(`
-        <form method="POST" action="/">
-            <h1>hi ${userName}</h1>
-            <input name="username" type="text">
-            <button type="submit">send</button>
-        </form>
-    `);
+    res.render('index', {  // render a view
+        user: userName,
+    });
 });
 
 // express sets up the server for us behind the scenes
