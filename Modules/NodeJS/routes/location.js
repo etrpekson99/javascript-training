@@ -8,10 +8,11 @@ const locationStorage = {
 
 // only incoming post requests to add-location will make it here
 router.post('/add-location', (req, res, next) => {
+    const id = Math.random();
     // we can also add validation here
 
     locationStorage.locations.push({
-        id: Math.random(),
+        id,
         address: req.body.address,
         coordinates: {
             lat: req.body.lat,
@@ -22,6 +23,7 @@ router.post('/add-location', (req, res, next) => {
     // send a json response
     res.json({
         message: 'Stored location',
+        locationId: id,
     });
 });
 
