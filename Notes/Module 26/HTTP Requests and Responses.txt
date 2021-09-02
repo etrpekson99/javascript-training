@@ -5,3 +5,6 @@ not shut down script execution.
 
 We want our server to keep running
 
+It's good practice to attach metadata to the response
+that explains to the browser what kind of data is attached,
+because that would tell the browser what to do with the data
