@@ -1,0 +1,9 @@
+Cross-origin Resource Sharing
+
+By default, only requests to same origin (domain) are allowed.
+
+On our Node app, we can only communicate with routes
+that exist on the same server (localhost:3000).
+
+More on CORS:
+https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS
