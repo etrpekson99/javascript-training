@@ -1,5 +1,8 @@
 What could go wrong when we write JS code?
 
+CSRF and security details in our code are the most important
+security holes we need to consider on the client-side.
+
 Security details in our code
 - our JS code is part of what the browser downloads
   and runs on it. all our code runs on the machine
