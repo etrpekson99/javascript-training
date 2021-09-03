@@ -8,7 +8,7 @@ Security details in our code
 - security-relevant details can be read
 - example: database access credentials exposed in code
 
-Cross-site scripting attacks
+Cross-site scripting attacks (XSS)
 - the most dangerous attack pattern against client-side JS
   applications
 - attack pattern where malicious JS code gets injected + executed
@@ -18,6 +18,12 @@ Cross-site scripting attacks
 - modern browsers have a security feature where they do not
   execute <script> tags which are output by innerHTML
 
+Third-party libraries and XSS
+- any third-party code we add to our project is also executed
+- when adding third-party libraries, we have to make sure that
+  it's from people we trust, and that they secure their code
+  properly
+
 Cross-site request forgery (CSRF)
 
-Cross-origin resource sharing
+Cross-origin resource sharing (CORS)
