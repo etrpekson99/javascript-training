@@ -25,5 +25,10 @@ Third-party libraries and XSS
   properly
 
 Cross-site request forgery (CSRF)
+- attack pattern that depends on injected content (e.g. image)
+- requests to malicious servers are made with user's cookies
+- actions can be executed without the user knowing
+- example: malicious image URLs, XSS
+- more of a server-side issue
 
 Cross-origin resource sharing (CORS)
