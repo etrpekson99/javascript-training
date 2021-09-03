@@ -1,0 +1,15 @@
+What could go wrong when we write JS code?
+
+Security details in our code
+- our JS code is part of what the browser downloads
+  and runs on it. all our code runs on the machine
+  of our page visitors
+- our JS code can be read by ANYONE
+- security-relevant details can be read
+- example: database access credentials exposed in code
+
+Cross-site scripting attacks
+
+Cross-site request forgery (CSRF)
+
+Cross-origin resource sharing
