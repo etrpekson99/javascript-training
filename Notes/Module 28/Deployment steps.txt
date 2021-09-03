@@ -21,3 +21,10 @@ Deployment steps
 
 For server-side code, code optimization and building for production
 is not too necessary.
+
+Deploying with firebase: (client-side)
+firebase init
+firebase deploy
+
+Deploying with Heroku: (server-side)
+deploy with Git
