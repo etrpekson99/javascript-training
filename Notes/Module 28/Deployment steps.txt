@@ -1,0 +1,23 @@
+Different kinds of applications / websites
+
+Only HTML + JS + CSS
+- can be deployed to a static host (doesn't execute 
+  server-side code) suffices
+- to be deployed in a server that can't execute NodeJS
+- server needs to host + provide HTML, JS, and CSS assets
+- example services: AWS S3, Firebase hosting, etc
+
+Server-side code (NodeJS)
+- need dynamic host (able to execute server-side NodeJS)
+- server needs to host + execute filtes (server-side)
+- example services: AWS elastic beanstalk, Heroku, etc
+
+Deployment steps
+- develop / write code
+- test
+- optimize
+- build for production
+- deploy output
+
+For server-side code, code optimization and building for production
+is not too necessary.
