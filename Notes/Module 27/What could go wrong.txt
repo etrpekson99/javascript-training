@@ -32,3 +32,8 @@ Cross-site request forgery (CSRF)
 - more of a server-side issue
 
 Cross-origin resource sharing (CORS)
+- not an attack pattern but a security concept
+- requests from our client-side app can only be made to
+  a back-end that runs on the same server (same domain / origin)
+- controlled via server-side response headers and browser
+- example: JS modules
