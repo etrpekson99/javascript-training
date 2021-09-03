@@ -9,6 +9,14 @@ Security details in our code
 - example: database access credentials exposed in code
 
 Cross-site scripting attacks
+- the most dangerous attack pattern against client-side JS
+  applications
+- attack pattern where malicious JS code gets injected + executed
+- injected code can do ANYTHING our code could do as well
+- very dangerous: full behind-the-scenes control for attacker
+- example: unchecked user-generated content
+- modern browsers have a security feature where they do not
+  execute <script> tags which are output by innerHTML
 
 Cross-site request forgery (CSRF)
 
