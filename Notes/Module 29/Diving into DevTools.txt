@@ -8,3 +8,13 @@ Network
 Performance
 - allows us to throttle CPU performance
 - allows us to record performance and analyze it in detail
+
+Memory
+- allows us to take memory snapshots
+- the heap snapshot is the most important one
+- gives us a memory snapshot which shows us everything stored
+  in memory because of our web application
+
+Audits (now Lighthouse in Chrome)
+- allows us to run performance audits
+- browser will do couple of checks for us
