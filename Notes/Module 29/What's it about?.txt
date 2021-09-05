@@ -1,0 +1,28 @@
+What is performance?
+categorized into two main categories:
+
+Startup time
+- how long does it take to see something on the screen?
+- how quickly is a user able to interact with the page?
+
+Runtime performance
+- How smooth does the application run? Are there freezes or lags?
+- How smooth do animations play? Is there any visual lag?
+- Are there any memory leaks? Is the page getting slower over time?
+
+Performance is not just about JS
+
+It is influenced by a lot of factors. CSS code, HTML code, and of course also JS code.
+Also influenced by server speed / config.
+
+What influences performance when we talk about JS performance?
+JS Execution
+
+Startup time
+- how fast does the script load and execute?
+- primarily related to browser-side JS
+
+Runtime performance
+- how much work does the script do?
+- how much memory is occupied?
+- affects all JS environments, including server-side (NodeJS)
