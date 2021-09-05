@@ -1,0 +1,10 @@
+Elements
+- chrome "highlights" elements that are re-rendered or changed
+
+Network
+- allows us to throttle our internet speed
+- will show larger files taking longer to load
+
+Performance
+- allows us to throttle CPU performance
+- allows us to record performance and analyze it in detail
