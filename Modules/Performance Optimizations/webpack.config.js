@@ -2,7 +2,8 @@ const path = require('path');
 const CleanPlugin = require('clean-webpack-plugin');
 
 module.exports = {
-  mode: 'development',
+  // mode: 'development',
+  mode: 'production',
   entry: {
     shop: './src/non-optimized/shop.js'
   },
@@ -11,7 +12,8 @@ module.exports = {
     path: path.resolve(__dirname, 'dist', 'assets', 'scripts'),
     publicPath: 'assets/scripts/'
   },
-  devtool: 'cheap-module-eval-source-map',
+  // devtool: 'cheap-module-eval-source-map', // most source maps affect our code size too, but here it won't be a problem
+  devtool: 'source-map',
   devServer: {
     contentBase: './dist'
   },
