@@ -15,6 +15,9 @@ Memory
 - gives us a memory snapshot which shows us everything stored
   in memory because of our web application
 
+Coverage
+- shows us how much of our JS code is unused
+
 Audits (now Lighthouse in Chrome)
 - allows us to run performance audits
 - browser will do couple of checks for us
