@@ -1,0 +1,17 @@
+Measuring performance
+
+performance.now()
+- add this to our code (during development / testing) and
+  check this execution time (difference) for certain operations
+
+browser dev tools
+- use the many features of browser dev tools to detect
+  unnecessary code executions, http requests and measure
+  execution time + memory leaks
+
+jsperf.com
+- compare alternative code snippets and measure performance
+
+webpagetest.com
+- test your entire (live) web page to detect optimization
+  potential
