@@ -1,0 +1,15 @@
+Runtime performance
+- avoid unnecessary code executions
+- batch operations together if possible
+- find + fix memory leaks, even small ones
+- for high-frequency operations: use optimal JS approach (re-validate regularly)
+- CONSIDER micro-optimizations
+
+Startup performance
+- eliminate unnecessary / unused code
+- avoid using too many libraries
+- potentially add third-party libraries to bundle instead of CDN
+- bundle code and use lazy loading
+- minify code
+
+DON'T overdo it. We don't want to optimize every single bit of code.
