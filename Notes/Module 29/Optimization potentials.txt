@@ -1,0 +1,17 @@
+Different layers of performance optimization
+
+Startup time
+- bundle / script size: delays initial parsing / execution
+- number of HTTP roundtrips (e.g. because of non-bundled code, third-party library CDNS):
+  delays initial parsing / execution
+
+Runtime
+- Optimize code execution, DOM Access: avoid unnecessary code execution,
+  especially unnecessary DOM operation / repaints
+- working with the DOM is really expensive from a JS perspective
+- avoid memory leaks: can crash your application in the worst case,
+  but will slow it down in all cases
+- find code alternatives with better performance: especially important
+  for high-frequency" code parts
+- micro-optimizations in your code: optimize for a very specific user-case
+  (e.g. data structures for frequest access / changes)
