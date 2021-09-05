@@ -1,0 +1,10 @@
+Is approach A faster than approach B?
+
+When we are given performance check results from sites
+such as jsperf.com, we have to interpret the results
+with caution.
+
+We might not be running thousands of operations, therefore we can
+go for the code that is shorter and more readable.
+
+Performance changes over time and from browser to browser.
