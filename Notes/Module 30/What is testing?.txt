@@ -1,0 +1,33 @@
+What is testing?
+We have our code, and we have an expected result.
+
+Why does it matter?
+We automate so we don't have to test everything manually
+in our application.
+
+Why test?
+- get an error if we break our code
+- save time
+- think about possible issues and bugs
+- can integrate tests into our build workflow
+- break up complex dependencies; write code that we can split it
+- improves our code since we are forced to follow
+  certain patterns or write code in a certain way
+
+Different kinds of tests
+
+Fully-isolated (e.g. testing one function)
+- unit tests
+- write thousands of these
+
+With dependencies (e.g. testing a function that calls a function)
+- integration tests
+- write a good couple of these
+
+Full flow (e.g. validating the DOM after a click)
+- end-to-end (E2E) tests
+- write a few of these
+
+Complexity increases from unit tests to E2E tests.
+Frequency increases from E2E tests to unit tests, so we would
+have a LOT of unit tests.
