@@ -1,0 +1,17 @@
+We need three kinds of tools:
+
+Test runner
+- needed for unit + integration testing
+- executes our test, summarizes the results
+- e.g. Mocha, Jest
+
+Assertion library
+- needed for unit + integration testing
+- defines testing logic, conditions
+- e.g. Chai, Jest
+
+Headless browser
+- needed mostly for E2E testing
+- simulates browser interaction
+- e.g. Puppeteer
+
