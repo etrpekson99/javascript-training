@@ -1,18 +1,20 @@
-const getMin = (numbers) => {
-    if (!numbers.length) {
+const getMin = (numbers) => { // [3, 1, 2]
+    if (!numbers.length) { // 1 execution
         throw new Error('should not be an empty array');
     }
 
-    let currentMin = numbers[0];
+    let currentMin = numbers[0]; // 1 execution (sometimes won't run at all)
     
-    for(let i = 1; i < numbers.length; i++) {
-        if (numbers[i] < currentMin) {
-            currentMin = numbers[i];
+    for(let i = 1; i < numbers.length; i++) { // 1 execution
+        if (numbers[i] < currentMin) { // 2 executions given 3 items in an array
+            currentMin = numbers[i]; // 0 - 2 executions given our array
         }
     }
 
-    return currentMin;
+    return currentMin; // 1 execution
 }
+// T = c1 + (n * c2) + c3; the first and the third blocks are constants
+// T = n; can be simplified to this => here we have linear time complexity; if we feed it more items, it takes longer => O(n)
 
 const getMin2 = (numbers) => {
     if (!numbers.length) {

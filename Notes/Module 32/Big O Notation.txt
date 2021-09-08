@@ -1,0 +1,14 @@
+"how long does an operation take?"
+
+Expressed in a generalized form (NOT in time units but in math terms)
+
+We use something called Time Complexity
+
+O(n)
+... n = number of affected elements
+
+We typically look at the best case or the common case.
+
+What matters to us are the parts of the algorithm that vary
+based on the input size, because that is what will scale
+up or down.
