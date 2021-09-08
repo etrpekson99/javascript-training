@@ -1,0 +1,18 @@
+What are programming paradigms?
+- how we write or organize our code
+- not a syntax or feature; really just how we reason about
+  the program we're writing
+
+Object-oriented programming
+- organized data and logic in objects (properties + methods)
+- everything in our code gets represented as a Class, and in the end,
+  as an object
+- organize code in logical entities
+
+Procedural programming
+- write sequentiel series of execution steps / tasks
+- top to bottom code exectution
+
+Functional programming
+- organize code in (pure) functions with clearly defined tasks
+- pass data around via parameters
