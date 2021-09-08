@@ -1,0 +1,13 @@
+What are algorithms?
+- the sequence of steps we need to derive a desired
+  output with a given input
+
+What are data structures?
+- piece of data that follows certain rules, like an array
+
+Why do these matter?
+- more complex programs may require more sophisticated data
+  storage solutions and computation logic
+- In addition, we must be able to thing logically as a programmer -
+  get a "problem solving" attitude
+- Ace job interviews!
