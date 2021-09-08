@@ -14,16 +14,16 @@ const getMin = (numbers) => { // [3, 1, 2]
     return currentMin; // 1 execution
 }
 // T = c1 + (n * c2) + c3; the first and the third blocks are constants
-// T = n; can be simplified to this => here we have linear time complexity; if we feed it more items, it takes longer => O(n)
+// T = n; can be simplified to this => here we have LINEAR time complexity; if we feed it more items, it takes longer => O(n)
 
 const getMin2 = (numbers) => {
-    if (!numbers.length) {
+    if (!numbers.length) { // 1 execution
         throw new Error('should not be an empty array');
     }
 
     for (let i = 0; i < numbers.length; i++) {
-        let outerElement = numbers[i];
-        for(let j = i + 1; j < numbers.length; j++) {
+        let outerElement = numbers[i]; // n times where n is length of array
+        for(let j = i + 1; j < numbers.length; j++) { // n times
             let innerElement = numbers[j];
 
             if (outerElement > innerElement) {
@@ -37,8 +37,9 @@ const getMin2 = (numbers) => {
         }
     }
 
-    return numbers[0];
+    return numbers[0]; // 1 execution
 }
+// T = n * n; => O(n^2); this is a QUADRATIC time complexity (for 1000 items, it takes 1000 * 1000 times to execute)
 
 const testNumbers = [3, 7, 2, 8, -15, 1];
 const testNumbers2 = [3, 1, 2];
@@ -47,3 +48,5 @@ const min = getMin(testNumbers);
 const min2 = getMin2(testNumbers);
 
 console.log(min, min2); // should be 1
+
+// the linear one is better
