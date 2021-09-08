@@ -1,0 +1,19 @@
+Constant Time Complexity
+O(1)
+- example: pushing an item into an array
+
+Linear Time Complexity
+O(n)
+- example: the sum function we created
+- the more items we have, the longer it takes
+
+Quadratic Time Complexity
+O(n^2)
+- example: the sorting logic we built earlier
+- complexity grows exponentially; at a faster rate
+
+Logarithmic Time Complexity
+O(log n)
+- example: binary search algorithm
+- the more items we have, the longer it takes BUT
+  it grows at a SLOW rate
