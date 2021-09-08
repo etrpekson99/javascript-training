@@ -1,3 +1,5 @@
+// BEST CASE: [5] => O(1) => constant time complexity, where the code in the for loop is not executed at all
+// WORST CASE: [3, 1] => O(n) because all code blocks are executed
 const getMin = (numbers) => { // [3, 1, 2]
     if (!numbers.length) { // 1 execution
         throw new Error('should not be an empty array');
@@ -16,6 +18,9 @@ const getMin = (numbers) => { // [3, 1, 2]
 // T = c1 + (n * c2) + c3; the first and the third blocks are constants
 // T = n; can be simplified to this => here we have LINEAR time complexity; if we feed it more items, it takes longer => O(n)
 
+// BEST CASE: [1, 2, 3] => O(n^2) because the if statement does not execute
+// WORST CASE: [3, 2, 1] => O(^2) but the if statement executes EVERY iteration
+// AVERAGE CASE: [?, ?, ?] => the standard case we have to care about
 const getMin2 = (numbers) => {
     if (!numbers.length) { // 1 execution
         throw new Error('should not be an empty array');
